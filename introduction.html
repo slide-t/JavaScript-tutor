@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Find answers to frequently asked questions on internet safety for kids, mobile device use, social media, digital learning, and coding. EduKids Africa helps parents and educators guide children in safe and smart technology use." />
+  <meta name="keywords" content="Lessons, EduKids Africa, coding for kids, JavaScript tutorials, safe learning, children and technology" />
+  <meta name="author" content="EduKids Africa Team" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What You Will Learn - EduKids Africa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .lesson-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .lesson-container h1 {
+      text-align: center;
+      color: #001219;
+      margin-bottom: 30px;
+    }
+    .start-btn {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 10px 36px;
+      background-color: #001219;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .start-btn:hover {
+      background-color: #00303d;
+    }
+    .search-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .search-box input {
+      padding: 10px 15px;
+      width: 75%;
+      max-width: 600px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      transition: all 0.4s ease;
+    }
+    .search-box input:focus {
+      width: 85%;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0, 18, 25, 0.3);
+      border-color: #001219;
+    }
+    .search-box button {
+      padding: 10px 40px;
+      background-color: #001219;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .search-box button:hover {
+      background-color: #00303d;
+    }
+    .lesson-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    .lesson-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #001219;
+    }
+    .lesson-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      margin-top: 10px;
+    }
+    .lesson-answer.show {
+      max-height: 1000px;
+      opacity: 1;
+    }
+    .lesson-answer p {
+      margin: 0;
+      line-height: 1.6;
+    }
+    .lesson-answer a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0077cc;
+      text-decoration: underline;
+    }
+    .icon {
+      margin-left: 10px;
+    }
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #222;
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 14px;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #cookie-banner p {
+      margin: 0;
+      line-height: 1.5;
+    }
+    #cookie-banner .btn-accept {
+      align-self: flex-start;
+      background-color: gold;
+      border: none;
+      color: #000;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #cookie-banner .btn-accept:hover {
+      background-color: #e6c200;
+    }
+    .intro-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      padding: 20px;
+      text-align: center;
+    }
+    .intro-modal .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+    }
+    .intro-modal .start-btn {
+      background-color: green;
+      margin-top: 30px;
+      display: none;
+    }
+    .typewriter {
+      font-size: 28px;
+      font-style: italic;
+      font-family: cursive;
+      margin-bottom: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid white;
+      width: 0;
+      animation: typing 3s steps(20, end) forwards, blink 0.7s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 230px; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    @media screen and (min-width: 600px) {
+      #cookie-banner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-modal" id="introModal">
+    <div class="close" onclick="closeIntro()">&times;</div>
+    <div class="typewriter">Welcome</div>
+    <p>To the Complete JavaScript Class <br>By <br>EduKids Africa & <br>SlideTeck Academy.<br> Learn JavaScript with fun examples, <br>real-world tips,<br> and interactive exercises!</p>
+    <button class="start-btn" id="introStart" onclick="closeIntro()">Start Learning</button>
+  </div> 
+  <div class="lesson-container">
+    <h1>What You Will Learn</h1>
+    <button class="start-btn" onclick="startCourse()">Start Learning</button>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search lessons or topics..." />
+      <button onclick="filterLessons()">Search</button>
+    </div>
+    <div id="lesson-list"></div>
+    <div id="cookie-banner">
+      <p>
+        We use cookies to improve your experience on our site. By using our site, you agree to our
+        <a href="/p/privacy-policy.html" style="color: gold; text-decoration: underline;">Privacy Policy</a>.
+      </p>
+      <button class="btn-accept" onclick="acceptCookies()">Accept</button>
+    </div>
+  </div> 
+  <script>
+  
+   const lessons = [
+  {
+    q: "Lesson 1 – Introduction to JavaScript",
+    a: "Understand what JavaScript is.",
+    link: "lesson1.html"
+  },
+  {
+    q: "Lesson 2 – Variables and Data Types",
+    a: "💡 Learn about var, let, const.\n🔢 Strings, numbers, booleans.\n📘 Naming conventions.",
+    link: "lesson2.html"
+  },
+  {
+    q: "Lesson 3 – Basic Operators and Expressions",
+    a: "➕ Arithmetic, comparison & logical operators.\n💬 Practice writing expressions.\n🧪 Test your logic!",
+    link: "lesson3.html"
+  },
+  {
+    q: "Lesson 4 – Strings and Template Literals",
+    a: "🧵 Concatenate with +\n📦 Use template strings: `Hello, ${name}`\n🔤 Practice formatting output.",
+    link: "lesson4.html"
+  },
+  {
+    q: "Lesson 5 – Taking Input & Showing Output",
+    a: "📥 Use prompt(), alert(), console.log()\n💬 Make interactive scripts!",
+    link: "lesson5.html"
+  },
+  {
+    q: "Lesson 6 – Conditional Statements",
+    a: "🔀 if, else if, else\n✅ Practice making decisions in code.",
+    link: "lesson6.html"
+  },
+  {
+    q: "Lesson 7 – Switch Statements",
+    a: "🎛️ Use switch/case for multiple choices\n🧪 Compare with if/else chains.",
+    link: "lesson7.html"
+  },
+  {
+    q: "Lesson 8 – Functions",
+    a: "🔧 Declare, call, and reuse code\n📩 Pass arguments & return results.",
+    link: "lesson8.html"
+  },
+  {
+    q: "Lesson 9 – Arrow Functions",
+    a: "➡️ Learn concise ES6 function syntax\n🧠 Understand scope differences.",
+    link: "lesson9.html"
+  },
+  {
+    q: "Lesson 10 – Arrays",
+    a: "📚 Store multiple values\n📐 Use indexes, loop through items.",
+    link: "lesson10.html"
+  },
+  {
+    q: "Lesson 11 – Array Methods",
+    a: "🔍 Learn push(), pop(), slice(), splice()\n🔁 Transform arrays using map(), filter(), reduce().",
+    link: "lesson11.html"
+  },
+  {
+    q: "Lesson 12 – Objects in JavaScript",
+    a: "📦 Key-value pairs\n👤 Use dot and bracket notation.",
+    link: "lesson12.html"
+  },
+  {
+    q: "Lesson 13 – Loops: for, while, do-while",
+    a: "🔁 Automate repetitive tasks\n🔍 Loop through data.",
+    link: "lesson13.html"
+  },
+  {
+    q: "Lesson 14 – Looping Arrays (forEach, map)",
+    a: "🌐 Use forEach() and map() to process arrays.\n📊 Compare results.",
+    link: "lesson14.html"
+  },
+  {
+    q: "Lesson 15 – Scope & Block",
+    a: "📦 Learn global vs local variables\n🔐 Understand let, const scope.",
+    link: "lesson15.html"
+  },
+  {
+    q: "Lesson 16 – Events in JavaScript",
+    a: "🖱️ Use onclick, addEventListener\n📲 Make webpages interactive.",
+    link: "lesson16.html"
+  },
+  {
+    q: "Lesson 17 – DOM Manipulation",
+    a: "🌐 Access and change HTML elements\n🎨 Change content, styles with JS.",
+    link: "lesson17.html"
+  },
+  {
+    q: "Lesson 18 – DOM Traversal",
+    a: "🧭 Use parentNode, childNodes, nextElementSibling\n🔬 Navigate the HTML structure.",
+    link: "lesson18.html"
+  },
+  {
+    q: "Lesson 19 – Forms and Input Validation",
+    a: "📋 Handle form input\n🛡️ Prevent empty/invalid entries.",
+    link: "lesson19.html"
+  },
+  {
+    q: "Lesson 20 – Working with Dates",
+    a: "🗓️ Use Date object\n⏰ Get current date, time, format them.",
+    link: "lesson20.html"
+  },
+  {
+    q: "Lesson 21 – Math Object & Random Numbers",
+    a: "🎲 Use Math.random(), Math.floor(), etc.\n🧠 Fun number-based challenges.",
+    link: "lesson21.html"
+  },
+  {
+    q: "Lesson 22 – Timers (setTimeout & setInterval)",
+    a: "⏱️ Delay and repeat code with time.\n🎮 Make games & animations.",
+    link: "lesson22.html"
+  },
+  {
+    q: "Lesson 23 – Error Handling with try/catch",
+    a: "🧯 Catch & fix runtime errors\n🚨 Use finally, throw custom errors.",
+    link: "lesson23.html"
+  },
+  {
+    q: "Lesson 24 – JavaScript Best Practices",
+    a: "📏 Write cleaner, smarter code\n🧼 Follow naming, formatting tips.",
+    link: "lesson24.html"
+  },
+  {
+    q: "Lesson 25 – Project: Quiz App (Part 1)",
+    a: "🧠 Plan the structure\n🛠️ Setup basic HTML & CSS.",
+    link: "lesson25.html"
+  },
+  {
+    q: "Lesson 26 – Project: Quiz App (Part 2)",
+    a: "📲 Add JavaScript functionality\n📊 Display score & correct answers.",
+    link: "lesson26.html"
+  },
+  {
+    q: "Lesson 27 – Working with JSON",
+    a: "📦 Store and transfer structured data\n🧩 Learn stringify and parse.",
+    link: "lesson27.html"
+  },
+  {
+    q: "Lesson 28 – Fetch API (GET Request)",
+    a: "🌍 Make API requests\n📬 Get data & show it on page.",
+    link: "lesson28.html"
+  },
+  {
+    q: "Lesson 29 – Fetch API (POST Request)",
+    a: "📨 Send data to server\n🧪 Practice posting forms with fetch().",
+    link: "lesson29.html"
+  },
+  {
+    q: "Lesson 30 – Promises",
+    a: "🔄 Handle async tasks with .then()\n❌ Catch errors with .catch()",
+    link: "lesson30.html"
+  },
+  {
+    q: "Lesson 31 – Async/Await",
+    a: "⏳ Clean way to write async code\n🔁 Use try/catch for errors.",
+    link: "lesson31.html"
+  },
+  {
+    q: "Lesson 32 – Destructuring & Spread",
+    a: "📦 Unpack arrays/objects\n➕ Merge with spread operator (...).",
+    link: "lesson32.html"
+  },
+  {
+    q: "Lesson 33 – ES6 Modules",
+    a: "📁 Split JS into reusable files\n📥 import/export functions and vars.",
+    link: "lesson33.html"
+  },
+  {
+    q: "Lesson 34 – Browser Storage: sessionStorage",
+    a: "📍 Temporary data saved per session\n🔑 Compare with localStorage.",
+    link: "lesson34.html"
+  },
+  {
+    q: "Lesson 35 – Final Mini Project: To-Do App",
+    a: "✅ Build a functional To-Do app\n📌 Save tasks with localStorage.",
+    link: "lesson35.html"
+  },
+  {
+    q: "Lesson 36 – Final Recap + Tips",
+    a: "🧠 Summary of all key concepts\n🎓 Tips to keep practicing & growing.",
+    link: "lesson36.html"
+  },
+  {
+    q: "Lesson 37 – Working with Local Storage",
+    a: `✅ Store data with <code>localStorage.setItem()</code><br>\n📦 Retrieve with <code>localStorage.getItem()</code><br>\n❌ Clear with <code>removeItem()</code> and <code>clear()</code><br>\n🛠️ Practice saving user name that persists after refresh!`,
+    link: "lesson37.html"
+  },
+   {
+        q: "Lesson 37 – Working with Local Storage",
+        a: `✅ Store data with <code>localStorage.setItem()</code><br>📦 Retrieve with <code>localStorage.getItem()</code><br>❌ Clear with <code>removeItem()</code> and <code>clear()</code><br>🛠️ Practice saving user name that persists after refresh!`,
+        link: "lesson37.html"
+      },
+      {
+        q: "Lesson 38 – Creating a Digital Clock",
+        a: `⏰ Use <code>setInterval()</code> to update time<br>🕒 Display hours, minutes, and seconds<br>📱 Create a real-time digital clock interface`,
+        link: "lesson38.html"
+      },
+      {
+        q: "Lesson 39 – Countdown Timer Project",
+        a: `📆 Use <code>setInterval()</code> and date math<br>⏳ Countdown to a future date/time<br>🎯 Practice event-based updates`,
+        link: "lesson39.html"
+      },
+      {
+        q: "Lesson 40 – Stopwatch App with Start/Stop",
+        a: `⏱️ Build a stopwatch UI<br>▶️ Control with Start/Stop/Reset buttons<br>🛠️ Practice with timers and clearInterval()`,
+        link: "lesson40.html"
+      },
+      {
+        q: "Lesson 41 – Working with Forms in JavaScript",
+        a: `📋 Handle form input events<br>🔍 Validate form fields with JS<br>🛠️ Display submitted values dynamically`,
+        link: "lesson41.html"
+      },
+      {
+        q: "Lesson 42 – Creating a Signup Form",
+        a: `👤 Design a styled form<br>📩 Collect email, name, and password<br>🛠️ Use JS to validate and store data`,
+        link: "lesson42.html"
+      },
+      {
+        q: "Lesson 43 – Modal Popup for Subscription",
+        a: `📦 Build a full-screen modal<br>🔔 Trigger modal on events or delay<br>✅ Include close icon and overlay`,
+        link: "lesson43.html"
+      },
+      {
+        q: "Lesson 44 – To-Do App (Part 1: Adding Tasks)",
+        a: `📝 Build a task input field<br>➕ Add tasks to a list with <code>push()</code><br>🛠️ Render tasks dynamically on screen`,
+        link: "lesson44.html"
+      },
+      {
+        q: "Lesson 45 – To-Do App (Part 2: Deleting Tasks)",
+        a: `❌ Add delete button to each task<br>🗑️ Remove tasks with <code>remove()</code><br>🔁 Practice DOM element management`,
+        link: "lesson45.html"
+      },
+      {
+        q: "Lesson 46 – To-Do App (Part 3: Mark Complete)",
+        a: `✅ Mark tasks as completed<br>🔃 Toggle task status with JS<br>💾 Save completed state with localStorage`,
+        link: "lesson46.html"
+      },
+      {
+        q: "Lesson 47 – Quiz App (Part 1: Layout & Questions)",
+        a: `📋 Load questions dynamically<br>🎯 Compare selected vs correct answer<br>⚡ Add immediate feedback styling`,
+        link: "lesson47.html"
+      },
+      {
+        q: "Lesson 48 – Quiz App (Part 2: Score System)",
+        a: `🧠 Track score using JS<br>🎉 Show total result on completion<br>🛠️ Disable clicks after answering`,
+        link: "lesson48.html"
+      },
+      {
+        q: "Lesson 49 – Calculator App (Part 1: Layout)",
+        a: `🧮 Design button layout with grid<br>🧠 Use <code>eval()</code> to calculate results<br>📲 Clear, backspace, and input handling`,
+        link: "lesson49.html"
+      }
+];
+  
+  
+
+    const lessonList = document.getElementById("lesson-list");
+
+    function renderLessons(data) {
+      lessonList.innerHTML = "";
+      data.forEach((item, index) => {
+        const lessonItem = document.createElement("div");
+        lessonItem.className = "lesson-item";
+
+        const question = document.createElement("div");
+        question.className = "lesson-question";
+        question.innerHTML = `<span>${item.q}</span><span class="icon"><i class="fas fa-chevron-down"></i></span>`;
+
+        const answer = document.createElement("div");
+        answer.className = "lesson-answer";
+        answer.innerHTML = `<p>${item.a}</p><a href="${item.link}" onclick="saveProgress(${index})">Go to Lesson</a>`;
+
+        question.addEventListener("click", () => {
+          answer.classList.toggle("show");
+          const icon = question.querySelector("i");
+          icon.classList.toggle("fa-chevron-down");
+          icon.classList.toggle("fa-chevron-up");
+        });
+
+        lessonItem.appendChild(question);
+        lessonItem.appendChild(answer);
+        lessonList.appendChild(lessonItem);
+      });
+    }
+
+    function filterLessons() {
+      const input = document.getElementById("searchInput").value.trim().toLowerCase();
+      const filtered = lessons.filter(l =>
+        l.q.toLowerCase().includes(input) ||
+        l.a.toLowerCase().includes(input)
+      );
+      renderLessons(filtered);
+    }
+
+    function saveProgress(index) {
+      localStorage.setItem("lastLesson", index);
+    }
+
+    function startCourse() {
+      const last = localStorage.getItem("lastLesson");
+      if (last !== null) {
+        location.href = lessons[last].link;
+      } else {
+        location.href = lessons[0].link;
+      }
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'yes');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    function closeIntro() {
+      document.getElementById('introModal').style.display = 'none';
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      renderLessons(lessons);
+      if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+      }
+      setTimeout(() => {
+        document.getElementById("introStart").style.display = "inline-block";
+      }, 5000);
+    });
+  </script></body>
+</html>

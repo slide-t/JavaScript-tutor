@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 39 – JavaScript Debugging Techniques</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-left: 4px solid #001219;
+      overflow-x: auto;
+    }
+
+    .tips {
+      background: #e6f7ff;
+      padding: 15px;
+      border-left: 5px solid #1890ff;
+      margin-top: 20px;
+    }
+
+    button {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 39 – JavaScript Debugging Techniques</h1>
+
+    <p><strong>🧠 What You’ll Learn:</strong></p>
+    <ul>
+      <li>How to spot and fix common errors in JavaScript</li>
+      <li>Using <code>console.log()</code> effectively</li>
+      <li>Inspecting values and tracking flow</li>
+      <li>Using the browser's developer tools</li>
+    </ul>
+
+    <h3>Using <code>console.log()</code>:</h3>
+    <pre><code>let age = 20;
+console.log("The user's age is:", age);</code></pre>
+
+    <h3>Common Errors:</h3>
+    <ul>
+      <li><strong>ReferenceError:</strong> Variable not defined</li>
+      <li><strong>TypeError:</strong> Invalid operation on a data type</li>
+      <li><strong>SyntaxError:</strong> Mistyped code (missing brackets, etc.)</li>
+    </ul>
+
+    <h3 class="tips">🛠 Pro Tips:</h3>
+    <ul>
+      <li>Use <strong>Breakpoints</strong> in browser DevTools to pause and inspect code</li>
+      <li>Track flow step-by-step in the Sources tab</li>
+      <li>Use <code>console.warn()</code> and <code>console.error()</code> for different messages</li>
+    </ul>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    function goToNext() {
+      localStorage.setItem("lastLesson", 39);
+      window.location.href = "lesson40.html";
+    }
+  </script>
+</body>
+</html>

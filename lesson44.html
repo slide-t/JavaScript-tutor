@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 44 – To-Do App: Structure & Input</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    .input-area {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #001219;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      padding: 10px;
+      background: #f0f0f0;
+      margin-bottom: 8px;
+      border-radius: 5px;
+    }
+
+    .note {
+      margin-top: 20px;
+      background: #e8f8f5;
+      padding: 15px;
+      border-left: 5px solid #1abc9c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 44 – Build a To-Do App (Part 1)</h1>
+
+    <p><strong>🧠 What You'll Learn:</strong></p>
+    <ul>
+      <li>How to capture user input</li>
+      <li>Creating and displaying a task list</li>
+      <li>Handling basic events in a web app</li>
+    </ul>
+
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="What do you want to do today?" />
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="note">
+      ✨ In Part 2, we’ll add delete buttons, local storage, and style it even more!
+    </div>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    const taskList = document.getElementById("taskList");
+
+    function addTask() {
+      const task = document.getElementById("taskInput").value.trim();
+      if (task) {
+        const li = document.createElement("li");
+        li.textContent = task;
+        taskList.appendChild(li);
+        document.getElementById("taskInput").value = "";
+      }
+    }
+
+    function goToNext() {
+      localStorage.setItem("lastLesson", 44);
+      window.location.href = "lesson45.html";
+    }
+  </script>
+</body>
+</html>

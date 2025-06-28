@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 46 – To-Do App: Complete Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #001219;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .delete-btn {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .note {
+      margin-top: 20px;
+      background: #eef9f1;
+      padding: 15px;
+      border-left: 5px solid #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 46 – To-Do App (Part 3)</h1>
+
+    <p><strong>🧠 What You'll Learn:</strong></p>
+    <ul>
+      <li>How to mark tasks as completed ✅</li>
+      <li>Style completed tasks differently</li>
+      <li>Update localStorage to reflect task status</li>
+    </ul>
+
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="Add a task..." />
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="note">
+      ✅ Tap any task to mark it complete or undo it!
+    </div>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    const taskList = document.getElementById("taskList");
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("todoTasksV2")) || [];
+      tasks.forEach(task => renderTask(task.text, task.done));
+    }
+
+    function saveTasks() {
+      const tasks = [];
+      taskList.querySelectorAll("li").forEach(li => {
+        const span = li.querySelector("span");
+        tasks.push({ text: span.textContent, done: span.classList.contains("completed") });
+      });
+      localStorage.setItem("todoTasksV2", JSON.stringify(tasks));
+    }
+
+    function renderTask(text, done = false) {
+      const li = document.createElement("li");
+
+      const span = document.createElement("span");
+      span.textContent = text;
+      if (done) span.classList.add("completed");
+
+      span.onclick = function () {
+        span.classList.toggle("completed");
+        saveTasks();
+      };
+
+      const del = document.createElement("button");
+      del.textContent = "Delete";
+      del.className = "delete-btn";
+      del.onclick = function () {
+        li.remove();
+        saveTasks();
+      };
+
+      li.appendChild(span);
+      li.appendChild(del);
+      taskList.appendChild(li);
+    }
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const task = input.value.trim();
+      if (task) {
+        renderTask(task);
+        saveTasks();
+        input.value = "";
+      }
+    }
+
+    function goToNext() {
+      localStorage.setItem("lastLesson", 46);
+      window.location.href = "lesson47.html";
+    }
+
+    window.addEventListener("DOMContentLoaded", loadTasks);
+  </script>
+</body>
+</html>

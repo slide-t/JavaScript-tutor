@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 38 – sessionStorage vs localStorage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-left: 4px solid #001219;
+      overflow-x: auto;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #001219;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .popup {
+      display: none;
+      background: #cfe8cc;
+      padding: 15px;
+      margin-top: 20px;
+      border: 1px solid #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 38 – sessionStorage vs localStorage</h1>
+
+    <p><strong>🧠 What You’ll Learn:</strong></p>
+    <ul>
+      <li>The difference between <code>localStorage</code> and <code>sessionStorage</code>.</li>
+      <li>How to store data temporarily using <code>sessionStorage</code>.</li>
+      <li>Use cases for each type of storage.</li>
+    </ul>
+
+    <h3>What is sessionStorage?</h3>
+    <p><code>sessionStorage</code> stores data that is only available during a page session (until the browser is closed).</p>
+
+    <pre><code>sessionStorage.setItem("theme", "dark");
+let theme = sessionStorage.getItem("theme");
+console.log(theme); // Output: dark</code></pre>
+
+    <h3>localStorage vs sessionStorage</h3>
+    <ul>
+      <li><strong>localStorage:</strong> Persists even after the browser is closed.</li>
+      <li><strong>sessionStorage:</strong> Clears automatically when the page session ends.</li>
+    </ul>
+
+    <h3>Try It:</h3>
+    <button onclick="tryIt()">Store Session Data</button>
+    <div class="popup" id="popup">Data saved in <strong>sessionStorage</strong>! Try closing and reopening the tab.</div>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    function tryIt() {
+      sessionStorage.setItem("demo", "Hello Session");
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function goToNext() {
+      localStorage.setItem("lastLesson", 38); // saves progress
+      window.location.href = "lesson39.html"; // update to next lesson URL
+    }
+  </script>
+</body>
+</html>

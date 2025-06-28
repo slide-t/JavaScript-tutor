@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 40 – JavaScript Comments and Clean Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-left: 5px solid #001219;
+      overflow-x: auto;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #001219;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tip {
+      background: #fef9e7;
+      padding: 15px;
+      border-left: 5px solid #f4d03f;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 40 – JavaScript Comments and Clean Code</h1>
+
+    <p><strong>🧠 What You’ll Learn:</strong></p>
+    <ul>
+      <li>Writing clean, readable JavaScript code</li>
+      <li>How and when to use comments</li>
+      <li>Using consistent indentation and naming</li>
+    </ul>
+
+    <h3>Comments in JavaScript</h3>
+    <p>Use comments to explain what your code is doing, especially in complex sections.</p>
+
+    <pre><code>// This is a single-line comment
+
+/*
+ This is a multi-line comment
+ that spans several lines.
+*/</code></pre>
+
+    <h3>Clean Code Practices</h3>
+    <ul>
+      <li>Use descriptive variable names: <code>userAge</code> instead of <code>x</code></li>
+      <li>Keep functions focused on one task</li>
+      <li>Group related logic together</li>
+      <li>Indent code properly for better readability</li>
+    </ul>
+
+    <div class="tip">
+      ✨ <strong>Pro Tip:</strong> Write your code so others (and future you) can understand it easily.
+    </div>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    function goToNext() {
+      localStorage.setItem("lastLesson", 40);
+      window.location.href = "lesson41.html";
+    }
+  </script>
+</body>
+</html>

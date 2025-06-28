@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson 10 - Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    .navbar {
+      background: #003366;
+      padding: 15px;
+      color: #fff;
+      text-align: center;
+      font-size: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    h2 {
+      color: #003366;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .submit-btn {
+      background: #003366;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    .tip {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 10px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">JavaScript Tutorial - Lesson 10</div>  <div class="container">
+    <h2>Lesson 10: Form Validation</h2>
+    <p>Form validation ensures users fill out required fields correctly before submission.</p><form id="signupForm">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" />
+    <div id="nameError" class="error"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" />
+    <div id="emailError" class="error"></div>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<div class="tip">💡 Tip: Use <code>preventDefault()</code> in your submit event to stop the form from submitting until it passes checks.</div>
+
+<button class="submit-btn" style="margin-top: 30px;" onclick="window.location.href='lesson11.html'">Next Lesson</button>
+
+  </div>  <script>
+    const form = document.getElementById('signupForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      let isValid = true;
+
+      // Reset errors
+      nameError.textContent = '';
+      emailError.textContent = '';
+
+      if (nameInput.value.trim() === '') {
+        nameError.textContent = 'Name is required';
+        isValid = false;
+      }
+
+      if (emailInput.value.trim() === '') {
+        emailError.textContent = 'Email is required';
+        isValid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        emailError.textContent = 'Invalid email format';
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert('Form submitted successfully!');
+        form.reset();
+      }
+    });
+  </script></body>
+</html>

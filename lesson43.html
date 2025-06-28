@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 43 – Project Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdfdfd;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-left: 4px solid #001219;
+      overflow-x: auto;
+    }
+
+    .note {
+      background-color: #fef7e0;
+      padding: 15px;
+      margin-top: 20px;
+      border-left: 5px solid #f1c40f;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 25px;
+      background-color: #001219;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 43 – Project Setup for Final JavaScript Practice</h1>
+
+    <p><strong>🧠 What You'll Learn:</strong></p>
+    <ul>
+      <li>Folder and file structure for a small JS project</li>
+      <li>How to split HTML, CSS, and JavaScript</li>
+      <li>Referencing external JS files</li>
+    </ul>
+
+    <h3>Suggested Project Folder Structure:</h3>
+
+<pre>
+project/
+├── index.html
+├── style.css
+└── script.js
+</pre>
+
+    <h3>Step-by-Step:</h3>
+    <ol>
+      <li>Create a folder for your project</li>
+      <li>Inside it, create: <code>index.html</code>, <code>style.css</code>, <code>script.js</code></li>
+      <li>Link the CSS and JS in <code>index.html</code> like this:</li>
+    </ol>
+
+    <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+
+    <div class="note">
+      📁 Keep your files organized. It helps as your projects grow.
+    </div>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    function goToNext() {
+      localStorage.setItem("lastLesson", 43);
+      window.location.href = "lesson44.html";
+    }
+  </script>
+</body>
+</html>

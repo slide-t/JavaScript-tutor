@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Tutorial - Lesson 1</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #003366;
+      padding: 15px 20px;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* Welcome Modal (Dark Theme) */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      animation: fadeIn 1s ease;
+      color: white;
+    }
+
+    .modal-content {
+      background: #1a1a1a;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      animation: slideDown 0.8s ease;
+    }
+
+    .modal-content h1 {
+      font-size: 26px;
+      color: #80ed99;
+    }
+
+    .modal-content p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 50px auto;
+      animation: fadeIn 1s ease;
+    }
+
+    .code {
+      background: #1a1a1a;
+      color: #80ed99;
+      padding: 20px;
+      border-radius: 5px;
+      font-family: monospace;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #80ed99;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .next-btn {
+      display: block;
+      margin: 30px auto;
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      font-size: 14px;
+      z-index: 9999;
+      animation: fadeIn 1s ease;
+    }
+
+    .cookie-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .edu-brand {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .edu-brand i {
+      color: #ffffff;
+    }
+
+    .edu-brand a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .cookie-text {
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .show-details {
+      margin-top: 5px;
+      color: #ccc;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .accept-btn {
+      background: #80ed99;
+      color: #000;
+    }
+
+    .decline-btn {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    /* Subscription Modal */
+    .subscription-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      color: #fff;
+    }
+
+    .subscription-box {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .subscription-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .subscription-box button {
+      background: #80ed99;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">JavaScript Full Course - SlideTeck Academy</div>
+
+  <div class="modal" id="welcomeModal">
+    <div class="modal-content">
+      <h1>Welcome to Complete JavaScript Class</h1>
+      <p>From SlideTeck Academy / EduKids Africa</p>
+    </div>
+  </div>
+
+  <!-- Subscription Modal -->
+  <div class="subscription-modal" id="subscriptionModal">
+    <div class="subscription-box">
+      <h2>Subscribe for Full Access</h2>
+      <p>Join EduKids Africa Newsletter</p>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Parent or Your Email">
+      <button onclick="closeSubscription()">Subscribe</button>
+    </div>
+  </div>
+
+  <section class="main">
+    <h2>Lesson 1: Introduction & Setup</h2>
+    <p>JavaScript is a scripting language used to create and control dynamic website content. In this lesson, you'll learn how to link a JavaScript file and write your first code.</p>
+
+    <div class="code">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      <code>console.log('Hello, EduKids Africa!');</code>
+    </div>
+
+    <button class="next-btn" onclick="goToNext()">Next Lesson</button>
+  </section>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-header">
+      <span>This website uses cookies</span>
+      <div class="edu-brand">
+        <i class="fas fa-globe-africa"></i>
+        <a href="#" target="_blank">EduKids Africa</a>
+      </div>
+    </div>
+    <div class="cookie-text">
+      We use cookies to improve your experience. By using our website, you agree to our Cookie Policy. <span class="show-details">Show Details</span>
+    </div>
+    <div class="buttons">
+      <button class="accept-btn" id="acceptCookies">ACCEPT ALL</button>
+      <button class="decline-btn" id="declineCookies">DECLINE ALL</button>
+    </div>
+  </div>
+
+  <script>
+    // Hide modal after 3 seconds
+    setTimeout(() => {
+      document.getElementById('welcomeModal').style.display = 'none';
+    }, 3000);
+
+    // Cookie handling
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+
+    acceptBtn.addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+    });
+
+    declineBtn.addEventListener('click', () => {
+      cookieBanner.style.display = 'none';
+      setTimeout(() => {
+        cookieBanner.style.display = 'block';
+      }, 15000);
+    });
+
+    // Copy Code
+    function copyCode(btn) {
+      const code = btn.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = 'Copy', 2000);
+      });
+    }
+
+    // Subscription Popup on lesson 5 load
+    function goToNext() {
+      const currentPage = window.location.href;
+      if (currentPage.includes('lesson4.html')) {
+        document.getElementById('subscriptionModal').style.display = 'flex';
+      } else {
+        window.location.href = 'lesson2.html';
+      }
+    }
+
+    function closeSubscription() {
+      document.getElementById('subscriptionModal').style.display = 'none';
+      window.location.href = 'lesson5.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 23 - Keyboard Events and Input Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    .navbar {
+      background: #003366;
+      padding: 15px;
+      color: #fff;
+      text-align: center;
+      font-size: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    h2 {
+      color: #003366;
+    }
+    .code {
+      background: #1e1e1e;
+      color: #80ed99;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background: #80ed99;
+      color: #000;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .next-btn {
+      display: block;
+      margin: 30px auto 0;
+      background: #003366;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tip {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 10px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+    button.show-btn {
+      background: #eee;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    pre.solution {
+      background: #f0f0f0;
+      padding: 15px;
+      display: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">JavaScript Tutorial - Lesson 23</div>  <div class="container">
+    <h2>Lesson 23: Keyboard Events and Input Feedback</h2>
+    <p>Keyboard events help you respond to user keystrokes. Use events like <code>keydown</code>, <code>keyup</code>, and <code>input</code> to track what users type.</p><h3>Example 1: Detect Key Press</h3>
+<pre class="code">
+
+document.addEventListener("keydown", function(event) { console.log("Key pressed: " + event.key); });</pre>
+
+<h3>Example 2: Display Input Value</h3>
+<pre class="code">
+
+<input type="text" id="userInput" placeholder="Type something..."> <p id="feedback"></p>
+
+<script> document.getElementById("userInput").addEventListener("input", function() { document.getElementById("feedback").textContent = this.value; }); </script></pre>
+
+<h3>✅ Try It Yourself</h3>
+<p>Make a password field show the length of the password typed in real-time.</p>
+<button class="show-btn" onclick="document.getElementById('solution1').style.display='block';">Show Solution</button>
+<pre id="solution1" class="solution">&lt;input type="password" id="pwd" placeholder="Enter password"&gt;
+
+<p id="lengthMsg"></p>
+
+<script> document.getElementById("pwd").addEventListener("input", function() { let length = this.value.length; document.getElementById("lengthMsg").textContent = "Length: " + length; }); </script></pre>
+
+<div class="tip">💡 Tip: Use <code>event.key</code> to identify which key was pressed and <code>input</code> event to monitor field values.</div>
+
+<button class="next-btn" onclick="window.location.href='lesson24.html'">Next Lesson</button>
+
+  </div>  <script>
+    function copyCode(btn) {
+      const code = btn.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = 'Copy', 2000);
+      });
+    }
+  </script></body>
+</html>

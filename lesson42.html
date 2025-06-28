@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 42 – Events Recap & Mini Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 15px;
+      border-left: 5px solid #001219;
+      overflow-x: auto;
+    }
+
+    .highlight {
+      background: #e7f9f0;
+      padding: 15px;
+      border-left: 4px solid #2ecc71;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 25px;
+      background-color: #001219;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input {
+      padding: 10px;
+      width: 60%;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 42 – JavaScript Events Recap & Mini Project</h1>
+
+    <p><strong>🧠 What You'll Learn:</strong></p>
+    <ul>
+      <li>Review of common DOM event types</li>
+      <li>Creating interactive behavior with event listeners</li>
+      <li>Hands-on: A simple user interaction mini project</li>
+    </ul>
+
+    <h3>Common Event Types</h3>
+    <ul>
+      <li><code>click</code></li>
+      <li><code>input</code></li>
+      <li><code>submit</code></li>
+      <li><code>mouseover</code>, <code>mouseout</code></li>
+      <li><code>keydown</code>, <code>keyup</code></li>
+    </ul>
+
+    <h3>Mini Project: Greeting Generator</h3>
+    <p>Type your name and click the button to be greeted 👋</p>
+
+    <input type="text" id="userName" placeholder="Enter your name" />
+    <button onclick="greetUser()">Greet Me</button>
+
+    <div id="message"></div>
+
+    <div class="highlight">
+      ✅ This simple project shows how <strong>click</strong> and <strong>input</strong> events work together.
+    </div>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    function greetUser() {
+      const name = document.getElementById("userName").value.trim();
+      if (name) {
+        document.getElementById("message").textContent = `Hello, ${name}! Welcome back.`;
+      } else {
+        document.getElementById("message").textContent = "Please enter a valid name!";
+      }
+    }
+
+    function goToNext() {
+      localStorage.setItem("lastLesson", 42);
+      window.location.href = "lesson43.html";
+    }
+  </script>
+</body>
+</html>

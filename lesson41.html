@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 41 – JavaScript Best Practices</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    .tip-box {
+      background: #e8f0fe;
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 5px solid #1a73e8;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #001219;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 41 – JavaScript Best Practices for Beginners</h1>
+
+    <p><strong>🧠 What You'll Learn:</strong></p>
+    <ul>
+      <li>Organizing and writing clean JavaScript code</li>
+      <li>Common coding habits to avoid</li>
+      <li>How to structure your scripts</li>
+    </ul>
+
+    <h3>1. Use <code>const</code> and <code>let</code> instead of <code>var</code></h3>
+    <p><code>const</code> is used for values that won't change, <code>let</code> is for values that will.</p>
+
+    <h3>2. Group your related code together</h3>
+    <p>It makes your file easier to read and debug.</p>
+
+    <h3>3. Don’t Repeat Yourself (DRY)</h3>
+    <p>If you're writing the same code in more than one place, try to put it in a function instead.</p>
+
+    <div class="tip-box">
+      🔍 <strong>Tip:</strong> Use functions to avoid code duplication and improve readability.
+    </div>
+
+    <h3>4. Comment wisely</h3>
+    <p>Don’t over-comment — only explain complex logic or why something was done a certain way.</p>
+
+    <h3>5. Always format your code</h3>
+    <p>Use consistent indentation (2 or 4 spaces), spacing, and naming conventions.</p>
+
+    <button onclick="goToNext()">Next Lesson</button>
+  </div>
+
+  <script>
+    function goToNext() {
+      localStorage.setItem("lastLesson", 41);
+      window.location.href = "lesson42.html";
+    }
+  </script>
+</body>
+</html>

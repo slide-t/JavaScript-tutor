@@ -1,4 +1,181 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 3 – JavaScript Data Types</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn JavaScript Data Types: String, Number, Boolean, Null, Undefined, Object, and Array. Includes examples, console output, and quiz.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #00303d;
+      margin-top: 30px;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .tip, .warning {
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-left: 5px solid;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffebee;
+      border-color: #d32f2f;
+    }
+    .quiz, .summary, .nav {
+      margin-top: 40px;
+    }
+    .nav a {
+      display: inline-block;
+      background: #001219;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #004c5a;
+    }
+    code {
+      background: #e0f2f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Lesson 3 – JavaScript Data Types</h1>
+
+  <h3>📘 What is a Data Type?</h3>
+  <p>Data types are different kinds of values you can store in variables. In JavaScript, you don’t need to say the type — JavaScript figures it out for you.</p>
+
+  <h3>📦 The 7 Main Data Types</h3>
+  <ul>
+    <li><strong>String</strong> – Text like <code>"Hello"</code> or <code>'World'</code></li>
+    <li><strong>Number</strong> – Whole or decimal numbers like <code>12</code> or <code>3.14</code></li>
+    <li><strong>Boolean</strong> – <code>true</code> or <code>false</code></li>
+    <li><strong>Undefined</strong> – Declared but no value yet</li>
+    <li><strong>Null</strong> – Intentionally empty</li>
+    <li><strong>Object</strong> – A collection of values (like a profile)</li>
+    <li><strong>Array</strong> – A list of values (like scores or colors)</li>
+  </ul>
+
+  <h3>🧪 Declaring Each Type</h3>
+  <pre><code>let name = "Zainab";         // String
+let age = 10;                // Number
+let isStudent = true;        // Boolean
+let x;                       // Undefined
+let pet = null;              // Null
+let scores = [90, 80, 70];   // Array
+let user = {
+  username: "zani",
+  level: "beginner"
+};                           // Object</code></pre>
+
+  <div class="tip">
+    ✅ Use <code>typeof</code> to check what type a value is.
+  </div>
+
+  <h3>📌 Using typeof</h3>
+  <pre><code>console.log(typeof name);       // "string"
+console.log(typeof age);        // "number"
+console.log(typeof isStudent);  // "boolean"
+console.log(typeof x);          // "undefined"
+console.log(typeof pet);        // "object" (strange but true!)
+console.log(typeof scores);     // "object"
+console.log(typeof user);       // "object"</code></pre>
+
+  <div class="warning">
+    ⚠️ <strong>Weird JavaScript Fact:</strong> <code>typeof null</code> is <code>"object"</code>. It’s a bug JavaScript never fixed.
+  </div>
+
+  <h3>🎯 Real-life Examples</h3>
+  <ul>
+    <li>Use <code>String</code> to store names, titles, addresses</li>
+    <li>Use <code>Number</code> for age, marks, amounts</li>
+    <li>Use <code>Boolean</code> for status: isOnline, isPaid, etc.</li>
+    <li>Use <code>Array</code> to store multiple items like tasks</li>
+    <li>Use <code>Object</code> for grouped info like user profile</li>
+  </ul>
+
+  <h3>📚 Mini Quiz</h3>
+  <pre><code>let q = [true, "EduKids", 2024, null];
+
+console.log(typeof q);      // ?
+console.log(typeof q[0]);   // ?
+console.log(typeof q[2]);   // ?</code></pre>
+
+  <details>
+    <summary><strong>✅ Click to reveal answers</strong></summary>
+    <ul>
+      <li><code>typeof q</code> → "object"</li>
+      <li><code>typeof q[0]</code> → "boolean"</li>
+      <li><code>typeof q[2]</code> → "number"</li>
+    </ul>
+  </details>
+
+  <div class="summary">
+    <h3>✅ Summary</h3>
+    <ul>
+      <li><code>typeof</code> is your tool to check data types</li>
+      <li><code>null</code> is actually an object</li>
+      <li><code>Arrays</code> are also type "object"</li>
+      <li>Memorize the 7 main types to avoid bugs</li>
+    </ul>
+  </div>
+
+  <div class="nav">
+    <a href="lesson2.html">⬅️ Back to Lesson 2</a>
+    <a href="lesson4.html">Lesson 4 ➡️</a>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />

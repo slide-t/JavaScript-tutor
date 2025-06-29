@@ -6,6 +6,223 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      padding: 30px;
+    }
+
+    .lesson-container {
+      max-width: 450px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #001219;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00303d;
+    }
+
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 20px;
+      color: #007a33;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .nav-buttons a:hover {
+      background: #00303d;
+    }
+
+    /* Floating Sidebar Tracker (same from lesson53) */
+    .lesson-tracker {
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      width: 220px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      z-index: 9999;
+    }
+
+    .lesson-tracker h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: gold;
+    }
+
+    .lesson-tracker ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .lesson-tracker li {
+      padding: 5px 8px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lesson-tracker li.current {
+      background: #16a34a;
+      font-weight: bold;
+    }
+
+    .lesson-tracker li.visited::after {
+      content: " ✅";
+      font-size: 12px;
+      color: lightgreen;
+    }
+
+    .lesson-tracker li:hover {
+      background: #333;
+    }
+
+    .lesson-tracker a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 54 – Age Calculator</h1>
+
+    <label for="birthdate">Select Your Birthdate:</label>
+    <input type="date" id="birthdate" />
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div class="result" id="result">Your age will appear here</div>
+
+    <div class="nav-buttons">
+      <a href="lesson53.html">⬅️ Previous</a>
+      <a href="lesson55.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <!-- Sidebar Tracker -->
+  <div class="lesson-tracker" id="lessonTracker">
+    <h3>📚 Your Progress</h3>
+    <ul id="trackerList"></ul>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function calculateAge() {
+      const birthdate = new Date(document.getElementById("birthdate").value);
+      const today = new Date();
+      if (!birthdate.getTime()) {
+        document.getElementById("result").textContent = "Please select a valid birthdate.";
+        return;
+      }
+
+      let age = today.getFullYear() - birthdate.getFullYear();
+      const m = today.getMonth() - birthdate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+        age--;
+      }
+
+      document.getElementById("result").textContent = `🎉 You are ${age} year(s) old!`;
+    }
+
+    const lessons = Array.from({ length: 100 }, (_, i) => ({
+      id: i + 1,
+      title: `Lesson ${i + 1}`,
+      link: `lesson${i + 1}.html`
+    }));
+
+    const trackerList = document.getElementById('trackerList');
+    const currentLesson = window.location.pathname.split("/").pop();
+    let visited = JSON.parse(localStorage.getItem('visitedLessons') || '[]');
+    const currentId = parseInt(currentLesson.replace('lesson', '').replace('.html', ''));
+    if (!visited.includes(currentId)) {
+      visited.push(currentId);
+      localStorage.setItem('visitedLessons', JSON.stringify(visited));
+    }
+
+    lessons.slice(0, 60).forEach(lesson => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${lesson.link}">${lesson.title}</a>`;
+      if (lesson.link === currentLesson) li.classList.add('current');
+      if (visited.includes(lesson.id)) li.classList.add('visited');
+      trackerList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 54 – Age Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
       background: #f0f4f8;
       font-family: 'Segoe UI', sans-serif;
       padding: 30px;

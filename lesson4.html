@@ -1,3 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 4 – Arithmetic & Math in JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to use arithmetic operators and JavaScript's Math object. Includes code examples and explanations.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #00303d;
+      margin-top: 30px;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .tip, .warning {
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-left: 5px solid;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffebee;
+      border-color: #d32f2f;
+    }
+    .summary, .nav {
+      margin-top: 40px;
+    }
+    .nav a {
+      display: inline-block;
+      background: #001219;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #004c5a;
+    }
+    code {
+      background: #e0f2f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .github-link {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 15px;
+    }
+    .github-link a {
+      color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 4 – Arithmetic & Math in JavaScript</h1>
+
+    <h3>➕ Arithmetic Operators</h3>
+    <p>These are used to perform math between numbers:</p>
+    <ul>
+      <li><code>+</code> Addition</li>
+      <li><code>-</code> Subtraction</li>
+      <li><code>*</code> Multiplication</li>
+      <li><code>/</code> Division</li>
+      <li><code>%</code> Modulus (remainder)</li>
+    </ul>
+
+    <pre><code>let a = 10;
+let b = 3;
+
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // 3.333...
+console.log(a % b); // 1</code></pre>
+
+    <h3>🧠 Real-world Uses</h3>
+    <ul>
+      <li>Adding item prices in a shopping cart</li>
+      <li>Dividing scores to get an average</li>
+      <li>Using <code>%</code> to check if a number is even/odd</li>
+    </ul>
+
+    <pre><code>// Check even or odd
+let num = 17;
+
+if (num % 2 === 0) {
+  console.log("Even");
+} else {
+  console.log("Odd");
+}</code></pre>
+
+    <h3>📐 JavaScript's Math Object</h3>
+    <p>The <code>Math</code> object lets you do advanced calculations:</p>
+
+    <ul>
+      <li><code>Math.round(3.7)</code> → <strong>4</strong></li>
+      <li><code>Math.floor(3.9)</code> → <strong>3</strong></li>
+      <li><code>Math.ceil(3.1)</code> → <strong>4</strong></li>
+      <li><code>Math.sqrt(25)</code> → <strong>5</strong></li>
+      <li><code>Math.pow(2, 3)</code> → <strong>8</strong></li>
+      <li><code>Math.random()</code> → random number between 0–1</li>
+    </ul>
+
+    <pre><code>let price = 4.87;
+console.log(Math.round(price)); // 5
+
+let random = Math.floor(Math.random() * 10); // 0–9
+console.log("Lucky number:", random);</code></pre>
+
+    <h3>🧪 Mini Quiz</h3>
+    <pre><code>let x = 12;
+let y = 5;
+
+console.log(x % y);          // ?
+console.log(Math.ceil(4.2)); // ?
+console.log(Math.sqrt(64));  // ?</code></pre>
+
+    <details>
+      <summary><strong>✅ Show Answers</strong></summary>
+      <ul>
+        <li><code>x % y</code> → <strong>2</strong></li>
+        <li><code>Math.ceil(4.2)</code> → <strong>5</strong></li>
+        <li><code>Math.sqrt(64)</code> → <strong>8</strong></li>
+      </ul>
+    </details>
+
+    <div class="summary">
+      <h3>✅ Summary</h3>
+      <ul>
+        <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> are basic math tools</li>
+        <li><code>Math</code> object adds power: rounding, square root, random, etc.</li>
+        <li><code>%</code> helps detect even or odd</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson3.html">⬅️ Back to Lesson 3</a>
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson5.html">Lesson 5 ➡️</a>
+    </div>
+
+    <div class="github-link">
+      🔗 View this lesson on GitHub:<br />
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson4.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson4.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 49 – Calculator App (Part 1)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lesson-container {
+      max-width: 400px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .calculator button {
+      padding: 20px;
+      font-size: 18px;
+      border: none;
+      background: #001219;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .calculator button:hover {
+      background: #00303d;
+    }
+
+    #display {
+      grid-column: span 4;
+      background: #eee;
+      padding: 15px;
+      font-size: 20px;
+      text-align: right;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: green;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .nav-buttons a:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 49 – Calculator App (Part 1)</h1>
+
+    <div id="display">0</div>
+    <div class="calculator">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button>0</button>
+      <button>.</button>
+      <button>=</button>
+      <button>+</button>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson48.html">⬅️ Previous</a>
+      <a href="lesson50.html">Next ➡️</a>
+    </div>
+  </div>
+</body>
+</html>

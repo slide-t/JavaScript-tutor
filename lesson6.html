@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 6 – Comparison Operators</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the comparison operators in JavaScript: ==, ===, !=, !==, >, <. Know which one to use and how they behave with types.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .warning {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffecec;
+      border-color: #d32f2f;
+    }
+    .summary {
+      margin-top: 40px;
+    }
+    .summary ul {
+      padding-left: 20px;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 6 – Comparison Operators</h1>
 
+    <h3>🧠 What Are Comparison Operators?</h3>
+    <p>Comparison operators let you check if one value is equal to, greater than, or less than another.</p>
+
+    <h3>📌 The Most Common Operators</h3>
+    <pre><code>==    equal (loose check – allows type coercion)
+===   strict equal (checks value + type)
+!=    not equal (loose)
+!==   strictly not equal
+>     greater than
+<     less than
+>=    greater than or equal to
+<=    less than or equal to</code></pre>
+
+    <h3>🔍 Examples</h3>
+    <pre><code>5 == "5"      // true (JS converts string to number)
+5 === "5"     // false (types are different)
+7 !== 7       // false (same value and type)
+10 != "10"    // false (they’re equal loosely)
+3 >= 2        // true
+4 <= 4        // true</code></pre>
+
+    <div class="warning">
+      ⚠️ <strong>Use <code>===</code> and <code>!==</code></strong> for most comparisons. Avoid <code>==</code> unless you understand coercion!
+    </div>
+
+    <h3>👨‍💻 Real-World Use: Password Checker</h3>
+    <pre><code>let password = prompt("Enter your password");
+
+if (password === "secret123") {
+  alert("Access granted!");
+} else {
+  alert("Wrong password!");
+}</code></pre>
+
+    <div class="tip">
+      ✅ Use <code>===</code> to avoid bugs when checking user input, database values, or stored session data.
+    </div>
+
+    <h3>🧪 Practice</h3>
+    <pre><code>// What will this return?
+console.log(2 == "2");     // ?
+console.log(2 === "2");    // ?
+console.log(3 > 2);        // ?
+console.log(5 <= 5);       // ?
+console.log("10" !== 10);  // ?</code></pre>
+
+    <details>
+      <summary><strong>✅ Show Answers</strong></summary>
+      <ul>
+        <li><code>2 == "2"</code> → <strong>true</strong> (coerced)</li>
+        <li><code>2 === "2"</code> → <strong>false</strong> (diff type)</li>
+        <li><code>3 > 2</code> → <strong>true</strong></li>
+        <li><code>5 <= 5</code> → <strong>true</strong></li>
+        <li><code>"10" !== 10</code> → <strong>true</strong></li>
+      </ul>
+    </details>
+
+    <h3>🧠 Summary</h3>
+    <ul>
+      <li><code>==</code> is loose – avoid in most cases</li>
+      <li><code>===</code> is strict – use it often!</li>
+      <li>Use these operators in <code>if</code> statements to control logic</li>
+    </ul>
+
+    <div class="nav">
+      <a href="lesson5.html">⬅️ Back to Lesson 5</a>
+      <a href="lesson7.html">Lesson 7 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson6.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson6.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>

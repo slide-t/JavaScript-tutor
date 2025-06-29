@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 50 – Calculator Logic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+
+    .lesson-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    #display {
+      width: 100%;
+      padding: 15px;
+      font-size: 20px;
+      background: #eee;
+      text-align: right;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+    }
+
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .calculator button {
+      padding: 20px;
+      font-size: 18px;
+      border: none;
+      background: #001219;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .calculator button:hover {
+      background: #00303d;
+    }
+
+    .calculator button:active {
+      transform: scale(0.95);
+    }
+
+    .nav-buttons {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: green;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .nav-buttons a:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 50 – Calculator Logic</h1>
+
+    <div id="display">0</div>
+
+    <div class="calculator">
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="press('/')">/</button>
+
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('*')">*</button>
+
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('-')">-</button>
+
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="press('+')">+</button>
+
+      <button onclick="clearDisplay()" style="grid-column: span 4; background: red;">Clear</button>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson49.html">⬅️ Previous</a>
+      <a href="lesson51.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <script>
+    let input = '';
+
+    function press(val) {
+      if (input === 'Error') input = '';
+      input += val;
+      document.getElementById('display').textContent = input;
+    }
+
+    function calculate() {
+      try {
+        input = eval(input).toString();
+      } catch {
+        input = 'Error';
+      }
+      document.getElementById('display').textContent = input;
+    }
+
+    function clearDisplay() {
+      input = '';
+      document.getElementById('display').textContent = '0';
+    }
+  </script>
+</body>
+</html>

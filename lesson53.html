@@ -52,6 +52,193 @@
     .nav-buttons a:hover {
       background: #f9c600;
     }
+
+    /* Floating Sidebar Tracker */
+    .lesson-tracker {
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      width: 220px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      z-index: 9999;
+    }
+
+    .lesson-tracker h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: gold;
+    }
+
+    .lesson-tracker ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .lesson-tracker li {
+      padding: 5px 8px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lesson-tracker li.current {
+      background: #16a34a;
+      font-weight: bold;
+    }
+
+    .lesson-tracker li.visited::after {
+      content: " ✅";
+      font-size: 12px;
+      color: lightgreen;
+    }
+
+    .lesson-tracker li:hover {
+      background: #333;
+    }
+
+    .lesson-tracker a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Clock Container -->
+  <div class="clock-container">
+    <h1>Lesson 53 – Digital Clock</h1>
+    <div id="clock" class="clock">00:00:00</div>
+    <div class="nav-buttons">
+      <a href="lesson52.html">⬅️ Previous</a>
+      <a href="lesson54.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <!-- Sidebar Lesson Tracker -->
+  <div class="lesson-tracker" id="lessonTracker">
+    <h3>📚 Your Progress</h3>
+    <ul id="trackerList">
+      <!-- Lessons will be inserted here -->
+    </ul>
+  </div>
+
+  <!-- Clock Script -->
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <!-- Lesson Tracker Script -->
+  <script>
+    const lessons = Array.from({ length: 100 }, (_, i) => ({
+      id: i + 1,
+      title: `Lesson ${i + 1}`,
+      link: `lesson${i + 1}.html`
+    }));
+
+    const trackerList = document.getElementById('trackerList');
+    const currentLesson = window.location.pathname.split("/").pop();
+
+    // Mark this lesson as visited
+    let visited = JSON.parse(localStorage.getItem('visitedLessons') || '[]');
+    const currentId = parseInt(currentLesson.replace('lesson', '').replace('.html', ''));
+    if (!visited.includes(currentId)) {
+      visited.push(currentId);
+      localStorage.setItem('visitedLessons', JSON.stringify(visited));
+    }
+
+    // Build Tracker List
+    lessons.slice(0, 60).forEach(lesson => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${lesson.link}">${lesson.title}</a>`;
+      if (lesson.link === currentLesson) li.classList.add('current');
+      if (visited.includes(lesson.id)) li.classList.add('visited');
+      trackerList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 53 – Digital Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #001219, #00303d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .clock-container {
+      text-align: center;
+      background: #00303d;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .clock {
+      font-size: 48px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background: gold;
+      color: #001219;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .nav-buttons a:hover {
+      background: #f9c600;
+    }
   </style>
 </head>
 <body>

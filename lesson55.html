@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 55 – Password Strength Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f3;
+      padding: 30px;
+    }
+
+    .lesson-container {
+      max-width: 480px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .strength {
+      margin-top: 15px;
+      height: 12px;
+      width: 100%;
+      background: #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .strength-text {
+      margin-top: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .nav-buttons a:hover {
+      background: #00303d;
+    }
+
+    /* Floating Sidebar Tracker */
+    .lesson-tracker {
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      width: 220px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      z-index: 9999;
+    }
+
+    .lesson-tracker h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: gold;
+    }
+
+    .lesson-tracker ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .lesson-tracker li {
+      padding: 5px 8px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lesson-tracker li.current {
+      background: #16a34a;
+      font-weight: bold;
+    }
+
+    .lesson-tracker li.visited::after {
+      content: " ✅";
+      font-size: 12px;
+      color: lightgreen;
+    }
+
+    .lesson-tracker li:hover {
+      background: #333;
+    }
+
+    .lesson-tracker a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 55 – Password Strength Checker</h1>
+
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" oninput="checkStrength()" />
+
+    <div class="strength">
+      <div class="strength-bar" id="bar"></div>
+    </div>
+
+    <div class="strength-text" id="strengthText">Start typing...</div>
+
+    <div class="nav-buttons">
+      <a href="lesson54.html">⬅️ Previous</a>
+      <a href="lesson56.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <!-- Sidebar Tracker -->
+  <div class="lesson-tracker" id="lessonTracker">
+    <h3>📚 Your Progress</h3>
+    <ul id="trackerList"></ul>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function checkStrength() {
+      const password = document.getElementById("password").value;
+      const bar = document.getElementById("bar");
+      const text = document.getElementById("strengthText");
+
+      let strength = 0;
+      if (password.length >= 8) strength++;
+      if (/[A-Z]/.test(password)) strength++;
+      if (/[0-9]/.test(password)) strength++;
+      if (/[@$!%*?&]/.test(password)) strength++;
+
+      switch (strength) {
+        case 0:
+        case 1:
+          bar.style.width = "25%";
+          bar.style.background = "red";
+          text.textContent = "Weak";
+          break;
+        case 2:
+          bar.style.width = "50%";
+          bar.style.background = "orange";
+          text.textContent = "Fair";
+          break;
+        case 3:
+          bar.style.width = "75%";
+          bar.style.background = "#facc15";
+          text.textContent = "Good";
+          break;
+        case 4:
+          bar.style.width = "100%";
+          bar.style.background = "#16a34a";
+          text.textContent = "Strong";
+          break;
+      }
+    }
+
+    const lessons = Array.from({ length: 100 }, (_, i) => ({
+      id: i + 1,
+      title: `Lesson ${i + 1}`,
+      link: `lesson${i + 1}.html`
+    }));
+
+    const trackerList = document.getElementById('trackerList');
+    const currentLesson = window.location.pathname.split("/").pop();
+    let visited = JSON.parse(localStorage.getItem('visitedLessons') || '[]');
+    const currentId = parseInt(currentLesson.replace('lesson', '').replace('.html', ''));
+    if (!visited.includes(currentId)) {
+      visited.push(currentId);
+      localStorage.setItem('visitedLessons', JSON.stringify(visited));
+    }
+
+    lessons.slice(0, 60).forEach(lesson => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${lesson.link}">${lesson.title}</a>`;
+      if (lesson.link === currentLesson) li.classList.add('current');
+      if (visited.includes(lesson.id)) li.classList.add('visited');
+      trackerList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

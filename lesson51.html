@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 51 – Tip Calculator (UI Design)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    .lesson-container {
+      max-width: 450px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: #007a33;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .nav-buttons a:hover {
+      background: #005d26;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 51 – Tip Calculator (UI Design)</h1>
+
+    <label for="amount">Bill Amount (₦):</label>
+    <input type="number" id="amount" placeholder="Enter bill amount" />
+
+    <label for="tip">Tip Percentage:</label>
+    <select id="tip">
+      <option value="0.1">10%</option>
+      <option value="0.15">15%</option>
+      <option value="0.2">20%</option>
+    </select>
+
+    <label for="people">Number of People:</label>
+    <input type="number" id="people" placeholder="How many sharing?" />
+
+    <div class="result" id="result">Result will appear here</div>
+
+    <div class="nav-buttons">
+      <a href="lesson50.html">⬅️ Previous</a>
+      <a href="lesson52.html">Next ➡️</a>
+    </div>
+  </div>
+</body>
+</html>

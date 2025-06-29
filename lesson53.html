@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 53 – Digital Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #001219, #00303d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .clock-container {
+      text-align: center;
+      background: #00303d;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .clock {
+      font-size: 48px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background: gold;
+      color: #001219;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .nav-buttons a:hover {
+      background: #f9c600;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock-container">
+    <h1>Lesson 53 – Digital Clock</h1>
+    <div id="clock" class="clock">00:00:00</div>
+
+    <div class="nav-buttons">
+      <a href="lesson52.html">⬅️ Previous</a>
+      <a href="lesson54.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}:${s}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // run once on page load
+  </script>
+</body>
+</html>

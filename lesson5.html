@@ -1,3 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 5 – let, const, and var</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the difference between let, const, and var in JavaScript. Know which one to use and when.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #00303d;
+      margin-top: 30px;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .tip, .warning {
+      padding: 10px 15px;
+      margin-top: 15px;
+      border-left: 5px solid;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffebee;
+      border-color: #d32f2f;
+    }
+    .summary, .nav {
+      margin-top: 40px;
+    }
+    .nav a {
+      display: inline-block;
+      background: #001219;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #004c5a;
+    }
+    code {
+      background: #e0f2f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .github-link {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 15px;
+    }
+    .github-link a {
+      color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 5 – let, const, and var</h1>
+
+    <h3>📦 What are these?</h3>
+    <p>JavaScript uses <code>let</code>, <code>const</code>, and <code>var</code> to declare variables.</p>
+
+    <h3>🧠 <code>let</code></h3>
+    <p>Use <code>let</code> when the value of a variable can change later.</p>
+    <pre><code>let score = 0;
+score = 10; // works fine</code></pre>
+
+    <h3>🛡️ <code>const</code></h3>
+    <p>Use <code>const</code> when the value should <strong>never change</strong>.</p>
+    <pre><code>const pi = 3.14;
+pi = 4.5; // ❌ Error: can't change a const value</code></pre>
+
+    <div class="tip">
+      ✅ Always prefer <code>const</code> by default. Use <code>let</code> only when necessary.
+    </div>
+
+    <h3>⚠️ <code>var</code> (the old way)</h3>
+    <p><code>var</code> was used before 2015. It's still supported, but avoid it in modern code.</p>
+    <pre><code>var name = "Musa";</code></pre>
+    <div class="warning">
+      ⚠️ <code>var</code> doesn't follow block scoping and can cause bugs. Use <code>let</code> and <code>const</code> instead.
+    </div>
+
+    <h3>📌 Quick Comparison</h3>
+    <table>
+      <thead>
+        <tr><th>Keyword</th><th>Can Change?</th><th>Scope</th><th>Recommended?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>let</code></td><td>✅ Yes</td><td>Block</td><td>✅ Yes</td></tr>
+        <tr><td><code>const</code></td><td>❌ No</td><td>Block</td><td>✅ Yes</td></tr>
+        <tr><td><code>var</code></td><td>✅ Yes</td><td>Function</td><td>❌ No</td></tr>
+      </tbody>
+    </table>
+
+    <h3>👨‍💻 Practice</h3>
+    <pre><code>const appName = "EduKids";
+let userScore = 0;
+
+userScore = 5;
+console.log(appName, userScore);</code></pre>
+
+    <h3>🧪 Mini Quiz</h3>
+    <pre><code>const country = "Nigeria";
+country = "Ghana"; // What happens?
+
+let mood = "happy";
+mood = "excited"; // OK?
+
+var age = 20;
+{
+  var age = 30;
+}
+console.log(age); // What value?</code></pre>
+
+    <details>
+      <summary><strong>✅ Show Answers</strong></summary>
+      <ul>
+        <li><code>const country = "Nigeria";</code> → ❌ Error on reassign</li>
+        <li><code>let mood = "excited";</code> → ✅ Works</li>
+        <li><code>var age</code> → Re-declared, outputs <strong>30</strong></li>
+      </ul>
+    </details>
+
+    <div class="summary">
+      <h3>✅ Summary</h3>
+      <ul>
+        <li><code>const</code> = constant (use this when value won't change)</li>
+        <li><code>let</code> = changeable (use when value will change)</li>
+        <li><code>var</code> = old (avoid in modern code)</li>
+      </ul>
+    </div>
+
+    <div class="nav">
+      <a href="lesson4.html">⬅️ Back to Lesson 4</a>
+      <a href="lesson6.html">Lesson 6 ➡️</a>
+    </div>
+
+    <div class="github-link">
+      🔗 View this lesson on GitHub:<br />
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson5.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson5.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

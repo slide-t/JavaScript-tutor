@@ -1,6 +1,6 @@
 /* === service-worker.js === */
 
-const CACHE_NAME = 'js-tutorial-v1.1'; const urlsToCache = [ 
+const CACHE_NAME = 'js-tutorial-v1.11'; const urlsToCache = [ 
   '/', 
   '/index.html', 
   '/styles.css', 
@@ -55,6 +55,13 @@ const CACHE_NAME = 'js-tutorial-v1.1'; const urlsToCache = [
   '/lesson46.html',
   '/lesson47.html',
   '/lesson48.html',
+  '/lesson49.html',
+  '/lesson50.html',
+  '/lesson51.html',
+  '/lesson52.html',
+  '/lesson53.html',
+  '/lesson54.html',
+  '/lesson55.html',
 
 
 

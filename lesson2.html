@@ -87,7 +87,7 @@
   position: relative;
 }
 
-.copy-btn {
+/*.copy-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -96,7 +96,7 @@
   padding: 5px 10px;
   cursor: pointer;
   font-weight: bold;
-}
+}*/
 
 .next-btn {
   display: block;
@@ -419,7 +419,61 @@
   updateCircle();
   progressBtn.addEventListener("click", togglePopup);
 </script>
+<style>
+.copy-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
 
+.copy-wrapper button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #001219;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.copy-wrapper pre {
+  background: #f4f4f4;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+}
+
+</style>
+
+<div class="copy-wrapper">
+  <button onclick="copyCode()">Copy</button>
+  <pre id="codeArea">
+const greet = () => {
+  console.log("Hello EduKids!");
+};
+greet();
+  </pre>
+</div>
+
+<script>
+  function copyCode() {
+    const code = document.getElementById("codeArea").innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      alert("Code copied!");
+    });
+  }
+</script>
+
+
+
+  
 
 </body>
 </html>

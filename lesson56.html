@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 56 – Text Case Converter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f3;
+      padding: 30px;
+    }
+
+    .lesson-container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: vertical;
+      margin-top: 15px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      background: #001219;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background: #00303d;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .nav-buttons a:hover {
+      background: #00303d;
+    }
+
+    /* NEW CIRCULAR TRACKER */
+    #progress-circle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #001219;
+      color: #fff;
+      border-radius: 50%;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    #tracker-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      display: none;
+      width: 220px;
+      z-index: 9999;
+    }
+
+    #tracker-popup h4 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #001219;
+    }
+
+    #tracker-popup button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    #tracker-popup .close-popup {
+      background: none;
+      color: #888;
+      font-size: 16px;
+      border: none;
+      float: right;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 56 – Text Case Converter</h1>
+
+    <textarea id="text" placeholder="Type or paste your text here..."></textarea>
+
+    <div class="buttons">
+      <button onclick="toUpper()">UPPERCASE</button>
+      <button onclick="toLower()">lowercase</button>
+      <button onclick="toTitle()">Title Case</button>
+      <button onclick="clearText()">Clear</button>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson55.html">⬅️ Previous</a>
+      <a href="lesson57.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <!-- NEW CIRCULAR PROGRESS TRACKER -->
+  <div id="progress-circle">56</div>
+
+  <div id="tracker-popup">
+    <button class="close-popup" onclick="togglePopup()">❌</button>
+    <h4>You're on Lesson <span id="popupLessonNum">56</span></h4>
+    <p>Click confirm when you're done.</p>
+    <button onclick="confirmLesson()">✔ Confirm</button>
+  </div>
+
+  <script>
+    function toUpper() {
+      const textArea = document.getElementById("text");
+      textArea.value = textArea.value.toUpperCase();
+    }
+
+    function toLower() {
+      const textArea = document.getElementById("text");
+      textArea.value = textArea.value.toLowerCase();
+    }
+
+    function toTitle() {
+      const textArea = document.getElementById("text");
+      const words = textArea.value.toLowerCase().split(" ");
+      const titleCased = words.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+      textArea.value = titleCased;
+    }
+
+    function clearText() {
+      document.getElementById("text").value = "";
+    }
+
+    // 🎯 Tracker Logic
+    const progressBtn = document.getElementById("progress-circle");
+    const popup = document.getElementById("tracker-popup");
+    const popupLessonNum = document.getElementById("popupLessonNum");
+
+    const currentLesson = parseInt(window.location.pathname.match(/lesson(\d+)\.html/)?.[1]) || 1;
+    let savedLesson = parseInt(localStorage.getItem("currentLesson")) || currentLesson;
+
+    function updateCircle() {
+      progressBtn.textContent = savedLesson;
+      popupLessonNum.textContent = savedLesson;
+    }
+
+    function togglePopup() {
+      popup.style.display = popup.style.display === "none" ? "block" : "none";
+    }
+
+    function confirmLesson() {
+      savedLesson += 1;
+      localStorage.setItem("currentLesson", savedLesson);
+      updateCircle();
+      popup.style.display = "none";
+    }
+
+    updateCircle();
+    progressBtn.addEventListener("click", togglePopup);
+  </script>
+</body>
+</html>

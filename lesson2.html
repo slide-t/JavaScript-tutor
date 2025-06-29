@@ -1,3 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 2 – Variables in JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 30px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .output {
+      background: #e6ffe6;
+      padding: 10px;
+      margin-top: 10px;
+      border-left: 5px solid green;
+      font-family: monospace;
+    }
+    .tip, .warning {
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e0f7fa;
+      border-left: 5px solid #00796b;
+    }
+    .warning {
+      background: #ffebee;
+      border-left: 5px solid #c62828;
+    }
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .nav-buttons a {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 0 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .nav-buttons a:hover {
+      background: #003d4d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Lesson 2 – JavaScript Variables</h1>
+
+    <h3>📘 What is a Variable?</h3>
+    <p>Variables are like boxes where you store values. They help your program remember things like a name, number, or message.</p>
+
+    <h3>📦 Declaring Variables:</h3>
+    <pre>
+var fullName = "Ali Bello";   // old way
+let age = 12;                 // modern and recommended
+const country = "Nigeria";    // use for fixed values
+    </pre>
+
+    <div class="tip">
+      ✅ Use <code>let</code> when you expect the value to change. <br>
+      ✅ Use <code>const</code> when value stays constant. <br>
+      ❌ Avoid using <code>var</code> in modern JavaScript.
+    </div>
+
+    <h3>🔁 Can I Change the Value?</h3>
+    <pre>
+// let allows changes
+let score = 20;
+score = 35;
+console.log(score); // 35
+
+// const cannot be reassigned
+const siteName = "EduKids Africa";
+siteName = "MyNewSite"; // ❌ Error!
+    </pre>
+
+    <div class="warning">
+      ⚠️ Trying to reassign a <code>const</code> variable will throw an error!
+    </div>
+
+    <h3>📚 const with Objects and Arrays</h3>
+    <pre>
+const student = {
+  name: "Fatima",
+  age: 10
+};
+
+student.age = 11; // ✅ This works!
+student = {};     // ❌ This will fail
+    </pre>
+
+    <div class="tip">
+      💡 You can update the contents of an object or array declared with <code>const</code>, but you cannot reassign it entirely.
+    </div>
+
+    <h3>🧠 Try: Create and Update Data</h3>
+    <pre>
+let firstName = "Azeez";
+let lastName = "Olajide";
+
+let fullName = firstName + " " + lastName;
+console.log("Welcome, " + fullName);
+    </pre>
+
+    <div class="output">
+      👉 Output:<br>
+      Welcome, Azeez Olajide
+    </div>
+
+    <h3>🎯 Real-World Tip:</h3>
+    <p>
+      Use <code>const</code> for things like:
+      <ul>
+        <li>✅ App settings</li>
+        <li>✅ User ID after login</li>
+        <li>✅ Site name or version</li>
+      </ul>
+      Use <code>let</code> for:
+      <ul>
+        <li>✅ Scores, counters, positions</li>
+        <li>✅ Form values, temporary results</li>
+      </ul>
+    </p>
+
+    <h3>🔥 Interview Question:</h3>
+    <p><strong>Q:</strong> What's the difference between <code>let</code> and <code>const</code>?</p>
+    <p><strong>A:</strong> <code>let</code> allows reassignment. <code>const</code> doesn't allow reassignment but still allows object/array edits.</p>
+
+    <div class="nav-buttons">
+      <a href="lesson1.html">⬅️ Previous</a>
+      <a href="lesson3.html">Next ➡️</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -235,7 +415,7 @@
       <h1>Welcome to Complete JavaScript Class</h1>
       <p>From SlideTeck Academy / EduKids Africa</p>
     </div>
-  </div>  <!-- Subscription Modal -->  <div class="subscription-modal" id="subscriptionModal">
+  </div>  <!-- Subscription Modal -- <div class="subscription-modal" id="subscriptionModal">
     <div class="subscription-box">
       <h2>Subscribe for Full Access</h2>
       <p>Join EduKids Africa Newsletter</p>
@@ -252,7 +432,7 @@
 
 <button class="next-btn" onclick="goToNext()">Next Lesson</button>
 
-  </section>  <!-- Cookie Banner -->  <div class="cookie-banner" id="cookieBanner">
+  </section>  <!-- Cookie Banner --  <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-header">
       <span>This website uses cookies</span>
       <div class="edu-brand">
@@ -377,10 +557,10 @@
 </style>
 
 
-<!-- Floating Lesson Tracker -->
+<!-- Floating Lesson Tracker --
 <div id="progress-circle">15</div>
 
-<!-- Tracker Popup -->
+<!-- Tracker Popup --
 <div id="tracker-popup">
   <button class="close-popup" onclick="togglePopup()">❌</button>
   <h4>You're on Lesson <span id="popupLessonNum">15</span></h4>

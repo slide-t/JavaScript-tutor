@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 52 – Tip Calculator Logic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f3;
+      padding: 20px;
+    }
+
+    .lesson-container {
+      max-width: 450px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+      color: #007a33;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007a33;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005d26;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .nav-buttons a:hover {
+      background: #00303d;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 52 – Tip Calculator Logic</h1>
+
+    <label for="amount">Bill Amount (₦):</label>
+    <input type="number" id="amount" placeholder="Enter bill amount" />
+
+    <label for="tip">Tip Percentage:</label>
+    <select id="tip">
+      <option value="0.1">10%</option>
+      <option value="0.15">15%</option>
+      <option value="0.2">20%</option>
+    </select>
+
+    <label for="people">Number of People:</label>
+    <input type="number" id="people" placeholder="How many sharing?" />
+
+    <button onclick="calculateTip()">Calculate</button>
+
+    <div class="result" id="result">Result will appear here</div>
+
+    <div class="nav-buttons">
+      <a href="lesson51.html">⬅️ Previous</a>
+      <a href="lesson53.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <script>
+    function calculateTip() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const tipRate = parseFloat(document.getElementById('tip').value);
+      const people = parseInt(document.getElementById('people').value);
+      const result = document.getElementById('result');
+
+      if (isNaN(amount) || isNaN(tipRate) || isNaN(people) || people <= 0) {
+        result.textContent = 'Please enter valid numbers.';
+        result.style.color = 'red';
+        return;
+      }
+
+      const totalTip = amount * tipRate;
+      const totalAmount = amount + totalTip;
+      const perPerson = totalAmount / people;
+
+      result.innerHTML = `
+        💵 Tip: ₦${totalTip.toFixed(2)}<br>
+        💰 Total: ₦${totalAmount.toFixed(2)}<br>
+        👥 Per Person: ₦${perPerson.toFixed(2)}
+      `;
+      result.style.color = '#007a33';
+    }
+  </script>
+</body>
+</html>

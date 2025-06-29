@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 57 – Character Counter Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f5f9;
+      padding: 30px;
+    }
+
+    .lesson-container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #001219;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    .counter {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .nav-buttons a {
+      background: #001219;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .nav-buttons a:hover {
+      background: #00303d;
+    }
+
+    /* Circular Tracker */
+    #progress-circle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #001219;
+      color: #fff;
+      border-radius: 50%;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    #tracker-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      display: none;
+      width: 220px;
+      z-index: 9999;
+    }
+
+    #tracker-popup h4 {
+      margin-top: 0;
+      font-size: 16px;
+      color: #001219;
+    }
+
+    #tracker-popup button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    #tracker-popup .close-popup {
+      background: none;
+      color: #888;
+      font-size: 16px;
+      border: none;
+      float: right;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Lesson 57 – Character Counter</h1>
+
+    <textarea id="textArea" placeholder="Type your text..."></textarea>
+    <div class="counter" id="counter">Characters: 0 | Words: 0</div>
+
+    <div class="nav-buttons">
+      <a href="lesson56.html">⬅️ Previous</a>
+      <a href="lesson58.html">Next ➡️</a>
+    </div>
+  </div>
+
+  <!-- Circular Progress Tracker -->
+  <div id="progress-circle">57</div>
+
+  <div id="tracker-popup">
+    <button class="close-popup" onclick="togglePopup()">❌</button>
+    <h4>You're on Lesson <span id="popupLessonNum">57</span></h4>
+    <p>Click confirm when you're done.</p>
+    <button onclick="confirmLesson()">✔ Confirm</button>
+  </div>
+
+  <script>
+    const textarea = document.getElementById("textArea");
+    const counter = document.getElementById("counter");
+
+    textarea.addEventListener("input", () => {
+      const text = textarea.value.trim();
+      const charCount = text.length;
+      const wordCount = text === "" ? 0 : text.split(/\s+/).length;
+      counter.textContent = `Characters: ${charCount} | Words: ${wordCount}`;
+    });
+
+    // Tracker Logic
+    const progressBtn = document.getElementById("progress-circle");
+    const popup = document.getElementById("tracker-popup");
+    const popupLessonNum = document.getElementById("popupLessonNum");
+
+    const currentLesson = parseInt(window.location.pathname.match(/lesson(\d+)\.html/)?.[1]) || 1;
+    let savedLesson = parseInt(localStorage.getItem("currentLesson")) || currentLesson;
+
+    function updateCircle() {
+      progressBtn.textContent = savedLesson;
+      popupLessonNum.textContent = savedLesson;
+    }
+
+    function togglePopup() {
+      popup.style.display = popup.style.display === "none" ? "block" : "none";
+    }
+
+    function confirmLesson() {
+      savedLesson += 1;
+      localStorage.setItem("currentLesson", savedLesson);
+      updateCircle();
+      popup.style.display = "none";
+    }
+
+    updateCircle();
+    progressBtn.addEventListener("click", togglePopup);
+  </script>
+</body>
+</html>

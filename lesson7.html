@@ -1,4 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 7 – Logical Operators</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understand logical operators in JavaScript: &&, ||, !. Learn how to combine conditions for smarter decision making in your code.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .warning {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffecec;
+      border-color: #d32f2f;
+    }
+    .summary {
+      margin-top: 40px;
+    }
+    .summary ul {
+      padding-left: 20px;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 7 – Logical Operators</h1>
 
+    <h3>🧠 What Are Logical Operators?</h3>
+    <p>They allow us to combine or invert boolean expressions in JavaScript.</p>
+
+    <h3>🔑 Logical Operators List</h3>
+    <pre><code>&&   // AND – both sides must be true
+||   // OR – one side must be true
+!    // NOT – inverts a boolean (true → false)</code></pre>
+
+    <h3>🔍 Examples</h3>
+    <pre><code>let age = 20;
+let hasTicket = true;
+
+if (age >= 18 && hasTicket) {
+  console.log("You can enter.");
+}
+
+let isAdmin = false;
+let isEditor = true;
+
+if (isAdmin || isEditor) {
+  console.log("You have access.");
+}
+
+let isLoggedIn = false;
+
+if (!isLoggedIn) {
+  console.log("Please log in.");
+}</code></pre>
+
+    <div class="tip">
+      ✅ Use <code>||</code> to provide fallbacks, like:  
+      <code>let name = userName || "Guest";</code>
+    </div>
+
+    <div class="warning">
+      ⚠️ Avoid stacking too many <code>&&</code> or <code>||</code> checks. Break into separate <code>if</code> blocks for clarity.
+    </div>
+
+    <h3>🧪 Practice</h3>
+    <pre><code>let isVerified = true;
+let isPremium = false;
+
+if (isVerified && !isPremium) {
+  console.log("Upgrade to premium!");
+}</code></pre>
+
+    <details>
+      <summary><strong>✅ Show Answer</strong></summary>
+      <p>Output: "Upgrade to premium!" — because isVerified is true and isPremium is false, so <code>!isPremium</code> is true ✅</p>
+    </details>
+
+    <h3>📌 Common Use Cases</h3>
+    <ul>
+      <li>✅ Form validation: check if fields are filled</li>
+      <li>🔐 Login or access control</li>
+      <li>📦 Cart or item availability check</li>
+      <li>⚙️ Feature toggles for admin/dashboard</li>
+    </ul>
+
+    <div class="nav">
+      <a href="lesson6.html">⬅️ Back to Lesson 6</a>
+      <a href="lesson8.html">Lesson 8 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson7.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson7.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
 
 
 

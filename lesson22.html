@@ -1,49 +1,160 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 22 - Events and Event Listeners</title>
+  <meta charset="UTF-8" />
+  <title>Lesson 22 – Advanced Array Methods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn advanced JavaScript array methods like map, filter, and reduce. Practical examples with practice challenges and solutions." />
+  <meta name="keywords" content="JavaScript map, filter, reduce, array methods, JavaScript array functions, high-order functions, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
       color: #333;
     }
-    .navbar {
-      background: #003366;
-      padding: 15px;
-      color: #fff;
-      text-align: center;
-      font-size: 20px;
-    }
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
     }
-    h2 {
-      color: #003366;
+    h1 {
+      color: #001219;
+      text-align: center;
     }
-    .code {
-      background: #1e1e1e;
-      color: #80ed99;
-      padding: 15px;
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
       border-radius: 5px;
-      font-family: monospace;
-      position: relative;
-      margin-bottom: 20px;
     }
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px 10px;
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 22 – Advanced Array Methods</h1>
+
+    <h3>🧭 map()</h3>
+    <p>Transforms every element in an array and returns a new array.</p>
+    <pre><code>const nums = [1, 2, 3, 4];
+const doubled = nums.map(n => n * 2);
+console.log(doubled); // [2, 4, 6, 8]</code></pre>
+
+    <h3>🧹 filter()</h3>
+    <p>Returns a new array with only elements that pass a condition.</p>
+    <pre><code>const scores = [40, 85, 60, 95];
+const passed = scores.filter(score => score >= 60);
+console.log(passed); // [85, 60, 95]</code></pre>
+
+    <h3>🧮 reduce()</h3>
+    <p>Combines all array elements into a single value.</p>
+    <pre><code>const prices = [10, 20, 15];
+const total = prices.reduce((sum, price) => sum + price, 0);
+console.log(total); // 45</code></pre>
+
+    <div class="tip">
+      ✅ <code>map</code> returns same length array. <code>filter</code> may return fewer items. <code>reduce</code> always returns one value.
+    </div>
+
+    <div class="interview">
+      💬 <strong>Interview Tip:</strong> You may be asked to chain these methods or rewrite loops using <code>map/filter/reduce</code>.
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>
+      Given an array of students with scores, return only names of those who passed (score ≥ 50).
+    </p>
+    <pre><code>const students = [
+  { name: "Lola", score: 75 },
+  { name: "James", score: 40 },
+  { name: "Sara", score: 90 }
+];
+
+// Your code here</code></pre>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>const passedStudents = students
+  .filter(s => s.score >= 50)
+  .map(s => s.name);
+
+console.log(passedStudents); // ["Lola", "Sara"]</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson21.html">⬅️ Back to Lesson 21</a>
+      <a href="lesson23.html">Lesson 23 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson22.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson22.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html><html lang="en">
+20px;
+      ;
       background: #80ed99;
       color: #000;
       border: none;

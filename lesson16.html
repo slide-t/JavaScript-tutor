@@ -1,3 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 16 – JavaScript Functions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understand functions in JavaScript, how to declare and call them, pass arguments, and return values." />
+  <meta name="keywords" content="JavaScript functions, function declaration, return value, parameters, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 16 – JavaScript Functions</h1>
+
+    <h3>🧱 What is a Function?</h3>
+    <p>A function is a reusable block of code that performs a specific task.</p>
+
+    <pre><code>function greet() {
+  console.log("Hello, EduKids!");
+}
+
+greet(); // Output: Hello, EduKids!
+</code></pre>
+
+    <h3>📦 Parameters & Arguments</h3>
+    <pre><code>function greet(name) {
+  console.log("Hi " + name + "!");
+}
+
+greet("Azeez"); // Output: Hi Azeez!
+</code></pre>
+
+    <h3>🔁 Return Values</h3>
+    <pre><code>function add(a, b) {
+  return a + b;
+}
+
+let result = add(5, 3); // result = 8
+</code></pre>
+
+    <div class="tip">
+      ✅ Functions make your code DRY: <strong>Don't Repeat Yourself!</strong>
+    </div>
+
+    <div class="interview">
+      💬 <strong>Interview Insight:</strong> Expect to write a function that accepts arguments and returns results. Understand scope and reusability.
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Create a function <code>multiply</code> that takes two numbers and returns the product.</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>function multiply(a, b) {
+  return a * b;
+}
+
+console.log(multiply(4, 6)); // 24
+</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson15.html">⬅️ Back to Lesson 15</a>
+      <a href="lesson17.html">Lesson 17 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson16.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson16.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

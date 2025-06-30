@@ -1,3 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 20 – setTimeout, setInterval, and the Event Loop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understand JavaScript timing functions like setTimeout and setInterval. Learn how the event loop works in asynchronous execution." />
+  <meta name="keywords" content="JavaScript setTimeout, setInterval, event loop, async JavaScript, callback queue, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 20 – setTimeout, setInterval, and the Event Loop</h1>
+
+    <h3>⏱️ setTimeout()</h3>
+    <p>Schedules code to run once after a delay (in ms):</p>
+    <pre><code>setTimeout(() => {
+  console.log("This runs after 2 seconds");
+}, 2000);</code></pre>
+
+    <h3>🔁 setInterval()</h3>
+    <p>Repeats code every interval until stopped:</p>
+    <pre><code>let count = 0;
+
+const intervalId = setInterval(() => {
+  count++;
+  console.log("Count: ", count);
+
+  if (count >= 3) {
+    clearInterval(intervalId);
+  }
+}, 1000);</code></pre>
+
+    <h3>🔄 How the Event Loop Works</h3>
+    <p>JavaScript runs in a single-threaded environment, using a <strong>call stack</strong> and <strong>callback queue</strong>:</p>
+
+    <ul>
+      <li>Call stack runs synchronous code.</li>
+      <li>Asynchronous callbacks wait in the queue.</li>
+      <li>The Event Loop pushes callbacks to the call stack when it's empty.</li>
+    </ul>
+
+    <pre><code>console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout done");
+}, 0);
+
+console.log("End");
+// Output:
+// Start
+// End
+// Timeout done
+</code></pre>
+
+    <div class="tip">
+      ✅ Even <code>setTimeout(..., 0)</code> waits for the stack to clear!
+    </div>
+
+    <div class="interview">
+      💬 <strong>Interview Insight:</strong> You might be asked: What’s the output of async functions? Explain the event loop simply!
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Create a countdown from 5 to 1 using <code>setInterval</code> and display “GO!” at the end.</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>let n = 5;
+const timer = setInterval(() => {
+  console.log(n);
+  n--;
+  if (n === 0) {
+    clearInterval(timer);
+    console.log("GO!");
+  }
+}, 1000);
+</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson19.html">⬅️ Back to Lesson 19</a>
+      <a href="lesson21.html">Lesson 21 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson20.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson20.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

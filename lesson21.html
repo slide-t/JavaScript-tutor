@@ -1,3 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 21 – JavaScript Arrays</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn JavaScript arrays: how to declare, access, and modify them. Practice key array methods like push, pop, shift, unshift, and more." />
+  <meta name="keywords" content="JavaScript array, array methods, push pop, shift unshift, arrays tutorial, JavaScript basics, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 21 – JavaScript Arrays: Basics & Methods</h1>
+
+    <h3>📦 Declaring Arrays</h3>
+    <pre><code>let fruits = ["apple", "banana", "orange"];
+let numbers = [10, 20, 30, 40];</code></pre>
+
+    <h3>🎯 Accessing Array Elements</h3>
+    <pre><code>console.log(fruits[0]); // "apple"
+console.log(numbers[2]); // 30</code></pre>
+
+    <h3>🧰 Common Array Methods</h3>
+    <ul>
+      <li><code>push()</code>: Add to end</li>
+      <li><code>pop()</code>: Remove from end</li>
+      <li><code>shift()</code>: Remove from start</li>
+      <li><code>unshift()</code>: Add to start</li>
+    </ul>
+
+    <pre><code>fruits.push("grape");
+console.log(fruits); // ["apple", "banana", "orange", "grape"]
+
+fruits.pop();
+console.log(fruits); // ["apple", "banana", "orange"]</code></pre>
+
+    <h3>📏 Array Length</h3>
+    <pre><code>console.log(fruits.length);</code></pre>
+
+    <div class="tip">
+      ✅ You can loop through arrays using <code>for</code>, <code>for...of</code>, or <code>forEach()</code>!
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Create an array of your 5 favorite movies. Use <code>push()</code> and <code>pop()</code> to modify it. Log the final array and its length.</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>let movies = ["Inception", "Avengers", "Matrix", "Titanic", "Gladiator"];
+movies.push("Joker");
+movies.pop();
+console.log(movies);
+console.log(movies.length);</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson20.html">⬅️ Back to Lesson 20</a>
+      <a href="lesson22.html">Lesson 22 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson21.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson21.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

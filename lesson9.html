@@ -2,6 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Lesson 9 – Truthy and Falsy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understand how JavaScript treats values as truthy or falsy. Critical for writing effective conditions.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .warning {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffecec;
+      border-color: #d32f2f;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 9 – Truthy and Falsy</h1>
+
+    <h3>📚 What are Truthy and Falsy Values?</h3>
+    <p>In JavaScript, values are automatically converted to <code>true</code> or <code>false</code> when used in logical contexts like <code>if</code> statements.</p>
+
+    <h3>❌ Falsy Values (evaluated as false):</h3>
+    <pre><code>false
+0
+-0
+0n        // BigInt zero
+""        // Empty string
+null
+undefined
+NaN</code></pre>
+
+    <h3>✅ Everything Else is Truthy</h3>
+    <pre><code>"Hello"
+[]
+{}
+42
+"0"
+true</code></pre>
+
+    <div class="tip">
+      ✅ Use this concept to write cleaner code:
+      <pre><code>if (userName) {
+  console.log("Hello " + userName);
+} else {
+  console.log("Please log in.");
+}</code></pre>
+      You don’t need <code>userName !== ""</code>
+    </div>
+
+    <h3>🧪 Practice Example: Check Input</h3>
+    <pre><code>let input = prompt("Enter your name:");
+
+if (input) {
+  alert("Hello " + input);
+} else {
+  alert("You didn’t enter anything.");
+}</code></pre>
+
+    <h3>⚙️ Mini Practice Tool</h3>
+    <p>Open DevTools and try this:</p>
+    <pre><code>Boolean("")      // false
+Boolean(" ")     // true
+Boolean(0)       // false
+Boolean([])      // true
+Boolean(null)    // false
+Boolean("false") // true (non-empty string)</code></pre>
+
+    <div class="warning">
+      ⚠️ Be careful: <code>[]</code> and <code>{}</code> are truthy, even if they look empty!
+    </div>
+
+    <div class="nav">
+      <a href="lesson8.html">⬅️ Back to Lesson 8</a>
+      <a href="lesson10.html">Lesson 10 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson9.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson9.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 9 - JavaScript Events</title>
   <style>

@@ -1,3 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 29 – Type Conversion & Coercion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn the difference between type conversion and coercion in JavaScript. Explore examples that show how JavaScript handles data types behind the scenes." />
+  <meta name="keywords" content="JavaScript type coercion, type conversion, implicit conversion, explicit conversion, data types, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #0077b6;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .tip, .output {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #fff3cd;
+      border-left: 4px solid #ffa502;
+    }
+    .output {
+      background: #d6f5d6;
+      border-left: 4px solid #28a745;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 20px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 29 – Type Conversion & Coercion</h1>
+
+    <h3>🔁 Type Conversion (Explicit)</h3>
+    <pre><code>
+let year = "2024";
+console.log(Number(year)); // 2024 as number
+
+let price = 200;
+console.log(String(price)); // "200" as string
+    </code></pre>
+
+    <h3>⚠️ Type Coercion (Implicit)</h3>
+    <pre><code>
+console.log("4" + 4); // "44" (string)
+console.log("4" - 1); // 3   (number)
+console.log("10" * "2"); // 20
+console.log("Hi" * 2);   // NaN
+    </code></pre>
+
+    <div class="tip">
+      ⚠️ JavaScript will *automatically* convert values in expressions depending on the operator. Use explicit conversions to avoid bugs.
+    </div>
+
+    <h3>✅ Practice</h3>
+    <pre><code>
+// Convert string to number and add 5
+let input = "25";
+let result = Number(input) + 5;
+console.log(result); // 30
+    </code></pre>
+
+    <h3>🧠 Bonus Check</h3>
+    <pre><code>
+console.log(Boolean(0));        // false
+console.log(Boolean("hello"));  // true
+console.log(Boolean(""));       // false
+console.log(Boolean(null));     // false
+console.log(Boolean(undefined));// false
+    </code></pre>
+
+    <div class="output">
+      🧾 Output may depend on the truthy or falsy value of the expression.
+    </div>
+
+    <div class="nav">
+      <a href="lesson28.html">⬅️ Back to Lesson 28</a>
+      <a href="lesson30.html">Lesson 30 ➡️</a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

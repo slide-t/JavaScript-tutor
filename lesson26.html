@@ -1,3 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 26 – String Methods Practice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Review JavaScript string methods including slice, trim, replace, includes, and practice with real-world examples." />
+  <meta name="keywords" content="JavaScript string review, string methods practice, replace, includes, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #0077b6;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      background: #e0f7fa;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .challenge, .output {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e0f7fa;
+      border-left: 4px solid #00acc1;
+    }
+    .challenge {
+      background: #fff3cd;
+      border-left: 4px solid #ffa502;
+    }
+    .output {
+      background: #d6f5d6;
+      border-left: 4px solid #28a745;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 26 – String Methods Practice</h1>
+
+    <h3>🧪 Scenario 1: Trimming and Greeting</h3>
+    <pre><code>
+let userInput = "   Hello EduKids!   ";
+let cleanInput = userInput.trim();
+console.log(`Cleaned input: "${cleanInput}"`);
+    </code></pre>
+    <div class="output">
+      ✅ Output: Cleaned input: "Hello EduKids!"
+    </div>
+
+    <h3>🔍 Scenario 2: Case Insensitive Email Check</h3>
+    <pre><code>
+let email = "Student@EDUKIDS.com";
+let isCorrect = email.toLowerCase().includes("edukids");
+console.log(isCorrect); // true
+    </code></pre>
+
+    <h3>🪄 Scenario 3: Replacing Words</h3>
+    <pre><code>
+let message = "JavaScript is hard!";
+let updated = message.replace("hard", "fun");
+console.log(updated); // JavaScript is fun!
+    </code></pre>
+
+    <div class="challenge">
+      🧠 <strong>Challenge 1:</strong><br>
+      Write a function to format a phone number:
+      <br><code>"081-345-6789"</code> ➡️ <code>"0813456789"</code>
+    </div>
+
+    <details>
+      <summary>✅ Show Solution</summary>
+      <pre><code>
+function cleanPhone(phone) {
+  return phone.replace(/-/g, "");
+}
+console.log(cleanPhone("081-345-6789")); // "0813456789"
+      </code></pre>
+    </details>
+
+    <div class="challenge">
+      🧠 <strong>Challenge 2:</strong><br>
+      Write a function that capitalizes the first letter of any name input.
+      <br> Example: <code>"emeka"</code> ➡️ <code>"Emeka"</code>
+    </div>
+
+    <details>
+      <summary>✅ Show Solution</summary>
+      <pre><code>
+function capitalizeName(name) {
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
+console.log(capitalizeName("emeka")); // "Emeka"
+      </code></pre>
+    </details>
+
+    <div class="tip">
+      🔁 Practice these often. Strings are used everywhere — from usernames, URLs, emails, to real-world data formatting!
+    </div>
+
+    <div class="nav">
+      <a href="lesson25.html">⬅️ Back to Lesson 25</a>
+      <a href="lesson27.html">Lesson 27 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson26.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson26.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

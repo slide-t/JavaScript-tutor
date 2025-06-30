@@ -1,3 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 15 – Break and Continue in Loops</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to exit loops early with break or skip specific loop iterations with continue in JavaScript." />
+  <meta name="keywords" content="JavaScript break, continue, loop control, skipping loop, exiting loop, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 15 – Break and Continue in Loops</h1>
+
+    <h3>🛑 What is <code>break</code>?</h3>
+    <p>The <code>break</code> statement exits a loop immediately.</p>
+    <pre><code>for (let i = 1; i <= 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i);
+}
+// Output: 1 2 3 4</code></pre>
+
+    <h3>⏭️ What is <code>continue</code>?</h3>
+    <p><code>continue</code> skips just the current loop iteration and goes to the next.</p>
+    <pre><code>for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue;
+  }
+  console.log(i);
+}
+// Output: 1 2 4 5</code></pre>
+
+    <div class="tip">
+      ✅ Use <code>continue</code> when you want to skip a value (e.g., even numbers, nulls, etc.)
+    </div>
+
+    <div class="interview">
+      💬 <strong>Interview Insight:</strong> Break can also be used to stop an infinite loop! Be ready to explain why and when you'd use each.
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Write a loop that prints numbers 1–10, but skips all even numbers.</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  console.log(i);
+}</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson14.html">⬅️ Back to Lesson 14</a>
+      <a href="lesson16.html">Lesson 16 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson15.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson15.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 >
 <head>

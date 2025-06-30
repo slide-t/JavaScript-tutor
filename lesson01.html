@@ -1,1 +1,414 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 1 – JavaScript Overview | EduKids Africa</title>
+  <meta name="description" content="An overview of all JavaScript lessons from EduKids Africa. See what each lesson teaches and start learning step-by-step.">
+  <meta name="keywords" content="JavaScript lessons, learn JS, EduKids Africa, SlideTeck Academy, lesson tracker">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    .lesson {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+    .lesson-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /*font-weight: bold;*/
+      color: #001219;
+    }
+    .lesson-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+      padding-left: 10px;
+    }
+    .lesson-content.show {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .lesson-content p {
+      margin: 10px 0;
+    }
+    .lesson-header:hover {
+      color: #006d77;
+    }
+    a.lesson-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+   .container .start-btn {
+      margin: 30px auto;
+      display: block;
+      background: #fff;
+      color: #555;
+      text-align: center;
+      align-item: center;
+      justify-content: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 16px;
+      /*font-weight: bold;*/
+     border: 2px solid #555;
+      border-radius: 25px;
+      width: 100%;
+    }
+    .container .start-btn:hover {
+      background: #111;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>📘 Lesson 1 – What You'll Learn in This Course</h1>  <!-- Lessons Summary Blocks -->  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson2.html" class="lesson-link">Lesson 1 – Introduction to JavaScript</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+     
+       <p>📍How to Learn JavaScript Effectively
+         
+    </div>
+  </div> 
+  
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson2.html" class="lesson-link">Lesson 2 – Your First Script.</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+       <p>📍 Learn how to run your first JavaScript using <code>&lt;script&gt;</code> tag and browser dev tools. Understand basic output using <code>console.log()</code>.</p>
+      
+   </p>
+    </div>
+  </div> 
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson3.html" class="lesson-link">Lesson 3 – Linking JS to HTML</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Understand <code>let</code>, <code>const</code>, and <code>var</code>. Explore naming rules, reassignment, and block scope in real use cases.</p>
+    </div>
+  </div> 
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson4.html" class="lesson-link">Lesson 4 – JS Output – Console, Alert, InnerText</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Discover different data types in JS – strings, numbers, booleans, null, undefined. Learn how to check types and common uses.</p>
+    </div>
+  </div>  
+  
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson5.html" class="lesson-link">Lesson 5 – Variables in JavaScript</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Learn arithmetic, comparison, and logical operators in JS. Understand how to write powerful expressions using operators.</p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson6.html" class="lesson-link">Lesson 6 – JavaScript Strings</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Understand <code>let</code>, <code>const</code>, and <code>var</code>. Explore naming rules, reassignment, and block scope in real use cases.</p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson7.html" class="lesson-link">Lesson 7 – Numbers & Math in JS</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Understand <code>let</code>, <code>const</code>, and <code>var</code>. Explore naming rules, reassignment, and block scope in real use cases.</p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson8.html" class="lesson-link">Lesson 8 – Booleans & Comparisons</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Understand <code>let</code>, <code>const</code>, and <code>var</code>. Explore naming rules, reassignment, and block scope in real use cases.</p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson9.html" class="lesson-link">Lesson 9 – if/else Conditions</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Understand <code>let</code>, <code>const</code>, and <code>var</code>. Explore naming rules, reassignment, and block scope in real use cases.</p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson10.html" class="lesson-link">Lesson 10 – Logical Operators (&&, ||, !)</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 Understand <code>let</code>, <code>const</code>, and <code>var</code>. Explore naming rules, reassignment, and block scope in real use cases.</p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson11.html" class="lesson-link">Lesson 11 – Switch Statements</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 When you need to check many conditions based on one variable — switch can simplify your code and improve readability.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson12.html" class="lesson-link">Lesson 12 – Ternary Operator</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 These are core building blocks in conditional logic. Without them, JavaScript can't think clearly!
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson13.html" class="lesson-link">Lesson 13 – JS Loops (for, while)</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 Loops help us repeat actions without writing the same code multiple times. The for loop is one of the most common and powerful types.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson14.html" class="lesson-link">Lesson 14 – Arrays in JavaScript</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        
+  📍 There are times when we don’t know how many times we need to loop—while and do...while loops are perfect for that!
 
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson15.html" class="lesson-link">Lesson 15 – Array Methods</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍Sometimes, you want to jump out of a loop early or skip just one iteration — JavaScript gives you the break and continue keywords to do that.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson16.html" class="lesson-link">Lesson 16 – Looping Through Arrays</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+       📍 Functions help you write reusable blocks of code. They reduce repetition and organize your program into logical pieces.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson17.html" class="lesson-link">Lesson 17 – JavaScript Objects</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 Function expressions and arrow functions offer cleaner, flexible ways to write functions in JavaScript — great for beginners and pros alike!
+      </p>
+    </div>
+  </div> 
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson18.html" class="lesson-link">Lesson 18 – Nested Objects</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍  Scope defines where variables can be accessed. Lexical environment explains how functions “remember” where they were created.
+  
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson19.html" class="lesson-link">Lesson 19 – Functions in JavaScript</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 Closures allow functions to access variables from an outer function even after that outer function has finished executing. This enables private data and powerful patterns.
+  
+      </p>
+    </div>
+  </div> 
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson20.html" class="lesson-link">Lesson 20 – Parameters and Return Values</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      
+      <p>
+        📍 These functions help us schedule code to run later. Understanding them reveals how JavaScript handles asynchronous behavior behind the scenes.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson21.html" class="lesson-link">Lesson 21 – Function Expressions & Arrow Functions</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 Arrays are used to store multiple values in a single variable. Mastering arrays and their methods is key to solving real-world problems in JavaScript.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson22.html" class="lesson-link">Lesson 22 – Scope in JavaScript</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      
+      <p>
+        📍 These are high-order functions that let you transform, filter, and summarize array data easily. Used in every real-world JavaScript project.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson23.html" class="lesson-link">Lesson 23 – Hoisting in JavaScript</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        
+     📍 Loops like for and high-order methods like map, filter, and reduce can often achieve the same result. But when should you use one over the other?
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson24.html" class="lesson-link">Lesson 24 – JavaScript Events</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 Strings are one of the most essential data types in JavaScript. In this lesson, we explore what they are, how they work, and the methods used to manipulate them.
+      </p>
+    </div>
+  </div> 
+  
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson25.html" class="lesson-link">Lesson 25 – Event Objects</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>
+        📍 Template literals are a modern and powerful way to write strings in JavaScript. They allow variables, expressions, and even multi-line strings to be embedded directly into your code.
+      </p>
+    </div>
+  </div> 
+   <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson26.html" class="lesson-link">Lesson 26 – DOM Manipulation Basics</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      
+      <p>📍 This lesson wraps up everything we’ve learned about strings with real-world practice, mini challenges, and detailed explanations of commonly used string methods.</p>
+    </div>
+  </div> 
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson27.html" class="lesson-link">Lesson 27 – Changing Content and Styles</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 JavaScript can do math just like a calculator. You’ll learn how to add, subtract, multiply, divide, round numbers, and even use built-in Math functions.</p>
+    </div>
+  </div> 
+  
+  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson28.html" class="lesson-link">Lesson 28 – DOM Practice Project</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      
+      <p>
+  📍 This hands-on lesson walks you through how to build a simple age calculator using what you’ve learned about strings, numbers, and user input.
+</p>
+      
+    </div>
+  </div> 
+  
+  
+  <!-- Add remaining summaries up to lesson 29 using same structure -->  <div class="lesson">
+    <div class="lesson-header" onclick="toggleLesson(this)">
+      <a href="lesson29.html" class="lesson-link">Lesson 29 – Type Conversion & Coercion</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div class="lesson-content">
+      <p>📍 JavaScript is flexible when it comes to data types. But this can be tricky! In this lesson, we explore how JavaScript converts types (automatically or manually), and how to avoid bugs caused by type coercion.</p>
+    </div>
+  </div>
+  <a href="lesson2.html" class="start-btn">🚀 Begin Here</a>
+
+</div>
+  <script>
+  function toggleLesson(header) {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector("i");
+    content.classList.toggle("show");
+    icon.classList.toggle("fa-chevron-down");
+    icon.classList.toggle("fa-chevron-up");
+  }
+</script></body>
+</html>

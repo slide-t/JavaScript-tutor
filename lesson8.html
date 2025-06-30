@@ -1,3 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 8 – Conditional Statements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to make decisions in JavaScript with if, else, and else if. Real examples and practice for beginners.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .warning {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffecec;
+      border-color: #d32f2f;
+    }
+    .summary {
+      margin-top: 40px;
+    }
+    .summary ul {
+      padding-left: 20px;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 8 – Conditional Statements</h1>
+
+    <h3>🧠 Why Use Conditionals?</h3>
+    <p>JavaScript conditionals allow your code to make decisions and behave differently depending on inputs or variables.</p>
+
+    <h3>📌 Syntax</h3>
+    <pre><code>if (condition) {
+  // code runs if condition is true
+} else if (anotherCondition) {
+  // code runs if anotherCondition is true
+} else {
+  // code runs if none are true
+}</code></pre>
+
+    <h3>🎯 Real-World Example: Age Check</h3>
+    <pre><code>let age = 17;
+
+if (age >= 18) {
+  console.log("You can vote!");
+} else {
+  console.log("Sorry, too young to vote.");
+}</code></pre>
+
+    <h3>🎯 Grading System Example</h3>
+    <pre><code>let score = 75;
+
+if (score >= 90) {
+  console.log("A");
+} else if (score >= 80) {
+  console.log("B");
+} else if (score >= 70) {
+  console.log("C");
+} else {
+  console.log("Try again.");
+}</code></pre>
+
+    <h3>📦 Dynamic Use: Simple Login</h3>
+    <pre><code>let username = "admin";
+let password = "pass123";
+
+if (username === "admin" && password === "pass123") {
+  alert("Welcome Admin!");
+} else {
+  alert("Invalid credentials.");
+}</code></pre>
+
+    <div class="tip">
+      ✅ You can nest <code>if</code> statements inside others, but keep it readable.
+    </div>
+
+    <div class="warning">
+      ⚠️ Don't forget to use <code>===</code> when comparing strings or values for accuracy.
+    </div>
+
+    <h3>🧪 Practice Challenge</h3>
+    <p>Write an <code>if</code> condition that:</p>
+    <ul>
+      <li>Asks the user to input their age</li>
+      <li>If 13 or under → "You're a child"</li>
+      <li>14 to 19 → "You're a teenager"</li>
+      <li>20 and above → "You're an adult"</li>
+    </ul>
+
+    <details>
+      <summary><strong>✅ Show Sample Solution</strong></summary>
+      <pre><code>let age = prompt("Enter your age");
+
+if (age <= 13) {
+  alert("You're a child");
+} else if (age <= 19) {
+  alert("You're a teenager");
+} else {
+  alert("You're an adult");
+}</code></pre>
+    </details>
+
+    <h3>🔁 Summary</h3>
+    <ul>
+      <li><code>if</code> runs when condition is true</li>
+      <li><code>else if</code> checks new conditions</li>
+      <li><code>else</code> runs when none above match</li>
+    </ul>
+
+    <div class="nav">
+      <a href="lesson7.html">⬅️ Back to Lesson 7</a>
+      <a href="lesson9.html">Lesson 9 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson8.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson8.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />

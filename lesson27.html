@@ -1,3 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 27 – Numbers and Math in JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to use numbers, arithmetic operations, and Math methods in JavaScript with real-world examples and tips." />
+  <meta name="keywords" content="JavaScript numbers, Math object, arithmetic operators, rounding, random numbers, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #0077b6;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 12px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      background: #e0f7fa;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .challenge, .output {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e0f7fa;
+      border-left: 4px solid #00acc1;
+    }
+    .challenge {
+      background: #fff3cd;
+      border-left: 4px solid #ffa502;
+    }
+    .output {
+      background: #d6f5d6;
+      border-left: 4px solid #28a745;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 27 – Numbers and Math in JavaScript</h1>
+
+    <h3>➕ Basic Arithmetic</h3>
+    <pre><code>
+let a = 10;
+let b = 3;
+
+console.log("Add:", a + b);        // 13
+console.log("Subtract:", a - b);   // 7
+console.log("Multiply:", a * b);   // 30
+console.log("Divide:", a / b);     // 3.333...
+console.log("Remainder:", a % b);  // 1
+    </code></pre>
+
+    <h3>📏 Rounding Numbers</h3>
+    <pre><code>
+let x = 5.75;
+console.log(Math.round(x)); // 6
+console.log(Math.floor(x)); // 5
+console.log(Math.ceil(x));  // 6
+    </code></pre>
+
+    <h3>🎲 Random Numbers</h3>
+    <pre><code>
+let rand = Math.random(); // 0 to 0.999
+console.log(rand);
+
+let rand1to10 = Math.floor(Math.random() * 10) + 1;
+console.log(rand1to10); // 1 to 10
+    </code></pre>
+
+    <h3>🔢 Convert String to Number</h3>
+    <pre><code>
+let price = "200";
+let tax = 15;
+
+let total = Number(price) + tax;
+console.log(total); // 215
+    </code></pre>
+
+    <div class="tip">
+      💡 Tip: You can use <code>parseInt()</code> or <code>parseFloat()</code> to convert strings into integers or decimal numbers.
+    </div>
+
+    <div class="challenge">
+      🧠 <strong>Challenge:</strong><br>
+      Write a function that generates a random number between 1 and 100 and checks if it’s even or odd.
+    </div>
+
+    <details>
+      <summary>✅ Show Solution</summary>
+      <pre><code>
+function checkEvenOdd() {
+  let num = Math.floor(Math.random() * 100) + 1;
+  console.log("Generated:", num);
+  if (num % 2 === 0) {
+    console.log("Even");
+  } else {
+    console.log("Odd");
+  }
+}
+checkEvenOdd();
+      </code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson26.html">⬅️ Back to Lesson 26</a>
+      <a href="lesson28.html">Lesson 28 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson27.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson27.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

@@ -2,6 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Lesson 13 – JavaScript For Loop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Master the JavaScript for loop: learn how to repeat tasks efficiently and understand loop logic with practical examples." />
+  <meta name="keywords" content="JavaScript, for loop, coding for beginners, learn JS loops, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 13 – JavaScript For Loop</h1>
+
+    <h3>🔁 Why Loops?</h3>
+    <p>Imagine printing numbers 1 to 10 without typing <code>console.log</code> ten times. That’s where loops shine!</p>
+
+    <h3>📦 Syntax of a <code>for</code> Loop</h3>
+    <pre><code>for (let i = 0; i < 5; i++) {
+  console.log("Count:", i);
+}</code></pre>
+
+    <ul>
+      <li><code>let i = 0</code>: start point</li>
+      <li><code>i &lt; 5</code>: condition</li>
+      <li><code>i++</code>: update</li>
+    </ul>
+
+    <div class="tip">
+      ✅ Use <code>for</code> loops when you know exactly how many times you want to repeat.
+    </div>
+
+    <h3>🧠 Print 1 to 10</h3>
+    <pre><code>for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}</code></pre>
+
+    <h3>🔄 Reverse Loop</h3>
+    <pre><code>for (let i = 5; i >= 1; i--) {
+  console.log(i);
+}</code></pre>
+
+    <div class="interview">
+      💬 <strong>Interview Insight:</strong> Explain each part of the loop. Interviewers often ask “what does i++ do?” or “why use <code>let</code> here?”.
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Loop from 1 to 20. For every number divisible by 2, log "Even number: X"</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    console.log("Even number:", i);
+  }
+}</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson12.html">⬅️ Back to Lesson 12</a>
+      <a href="lesson14.html">Lesson 14 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson13.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson13.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 12 - JavaScript Loops</title>
   <style>

@@ -1,285 +1,159 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 18 - Forms and Input Handling</title>
+  <meta charset="UTF-8" />
+  <title>Lesson 18 – Scope & Lexical Environment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about scope in JavaScript — global, function, and block. Understand how lexical environment helps functions access outer variables." />
+  <meta name="keywords" content="JavaScript scope, lexical scope, block scope, function scope, closures, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
       color: #333;
     }
-    .navbar {
-      background: #003366;
-      padding: 15px;
-      color: #fff;
-      text-align: center;
-      font-size: 20px;
-    }
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-    h2 {
-      color: #003366;
-    }
-    .code {
-      background: #1e1e1e;
-      color: #80ed99;
-      padding: 15px;
-      border-radius: 5px;
-      font-family: monospace;
-      position: relative;
-      margin-bottom: 20px;
-    }
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px 10px;
-      background: #80ed99;
-      color: #000;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .next-btn {
-      display: block;
-      margin: 30px auto 0;
-      background: #003366;
-      color: #fff;
-      border: none;
-      padding: 12px 30px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .tip {
-      background: #e8f5e9;
-      border-left: 4px solid #4caf50;
-      padding: 10px;
-      margin: 20px 0;
-      font-style: italic;
-    }
-    button.show-btn {
-      background: #eee;
-      border: none;
-      padding: 8px 15px;
-      cursor: pointer;
-      margin-top: 10px;
-      border-radius: 5px;
-    }
-    pre.solution {
-      background: #f0f0f0;
-      padding: 15px;
-      display: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    #confirmationPrompt {
-      display: none;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
+      max-width: 900px;
+      margin: auto;
+      background: white;
       padding: 30px;
-      text-align: center;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-    #confirmationPrompt button {
-      background: #4caf50;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-  </style>
-</head>
-<body>
-  <div class="navbar">JavaScript Tutorial - Lesson 18</div>  <div class="container">
-    <h2>Lesson 18: Forms and Input Handling</h2>
-    <p>JavaScript allows you to access and process form data entered by users. Let's see how.</p><h3>Example 1: Accessing Form Values</h3>
-<pre class="code">
-
-<form id="myForm"> <input type="text" id="username" placeholder="Enter name"> <button type="submit">Submit</button> </form>
-
-<script> document.getElementById("myForm").addEventListener("submit", function(e) { e.preventDefault(); let name = document.getElementById("username").value; alert("Hello, " + name + "!"); }); </script></pre>
-
-<h3>✅ Try It Yourself</h3>
-<p>Create a form that accepts an email input and logs the value in the console when submitted.</p>
-<button class="show-btn" onclick="document.getElementById('solution1').style.display='block';">Show Solution</button>
-<pre id="solution1" class="solution">&lt;form id="emailForm"&gt;
-
-<input type="email" id="email" placeholder="Enter email"> <button type="submit">Send</button> </form>
-
-<script> document.getElementById("emailForm").addEventListener("submit", function(e) { e.preventDefault(); let userEmail = document.getElementById("email").value; console.log("Email submitted: " + userEmail); document.getElementById("confirmationPrompt").style.display = "block"; }); </script></pre>
-
-<div id="confirmationPrompt">
-  <h3>Confirm Your Email to Continue</h3>
-  <p>Please check your inbox and click confirm, or click below to proceed.</p>
-  <button onclick="proceedToLesson()">Confirm & Continue</button>
-</div>
-
-<div class="tip">💡 Tip: Always use <code>e.preventDefault()</code> to stop form from refreshing the page.</div>
-
-<button class="next-btn" onclick="window.location.href='lesson19.html'">Next Lesson</button>
-
-  </div>  <script>
-    function copyCode(btn) {
-      const code = btn.nextElementSibling.innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        btn.innerText = 'Copied!';
-        setTimeout(() => btn.innerText = 'Copy', 2000);
-      });
-    }
-
-    function proceedToLesson() {
-      alert("Email confirmed! Proceeding to the next lesson...");
-      window.location.href = "lesson19.html";
-    }
-  </script></body>
-</html>
-
-
-
-
-
-
-
-<!--
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesson 18 - Forms and Input Handling</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    .navbar {
-      background: #003366;
-      padding: 15px;
-      color: #fff;
-      text-align: center;
-      font-size: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
     }
-    h2 {
-      color: #003366;
+    h1 {
+      color: #001219;
+      text-align: center;
     }
-    .code {
-      background: #1e1e1e;
-      color: #80ed99;
-      padding: 15px;
-      border-radius: 5px;
-      font-family: monospace;
-      position: relative;
-      margin-bottom: 20px;
+    h3 {
+      color: #005f73;
     }
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px 10px;
-      background: #80ed99;
-      color: #000;
-      border: none;
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
       border-radius: 3px;
-      cursor: pointer;
     }
-    .next-btn {
-      display: block;
-      margin: 30px auto 0;
-      background: #003366;
-      color: #fff;
-      border: none;
-      padding: 12px 30px;
-      font-size: 16px;
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
       border-radius: 5px;
-      cursor: pointer;
     }
     .tip {
-      background: #e8f5e9;
-      border-left: 4px solid #4caf50;
-      padding: 10px;
-      margin: 20px 0;
-      font-style: italic;
+      background: #e6f7ff;
+      border-color: #0277bd;
     }
-    button.show-btn {
-      background: #eee;
-      border: none;
-      padding: 8px 15px;
-      cursor: pointer;
-      margin-top: 10px;
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
       border-radius: 5px;
     }
-    pre.solution {
-      background: #f0f0f0;
-      padding: 15px;
-      display: none;
-      border-radius: 5px;
-      margin-top: 10px;
+    .nav a:hover {
+      background: #00303d;
     }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
     }
   </style>
 </head>
 <body>
-  <div class="navbar">JavaScript Tutorial - Lesson 18</div>  <div class="container">
-    <h2>Lesson 18: Forms and Input Handling</h2>
-    <p>JavaScript allows you to access and process form data entered by users. Let's see how.</p><h3>Example 1: Accessing Form Values</h3>
-<pre class="code">
+  <div class="container">
+    <h1>Lesson 18 – Scope & Lexical Environment</h1>
 
-<form id="myForm"> <input type="text" id="username" placeholder="Enter name"> <button type="submit">Submit</button> </form>
+    <h3>🌍 Global vs Local Scope</h3>
+    <pre><code>let globalVar = "I am global";
 
-<script> document.getElementById("myForm").addEventListener("submit", function(e) { e.preventDefault(); let name = document.getElementById("username").value; alert("Hello, " + name + "!"); }); </script></pre>
+function checkScope() {
+  let localVar = "I am local";
+  console.log(globalVar); // I am global
+  console.log(localVar);  // I am local
+}
 
-<h3>✅ Try It Yourself</h3>
-<p>Create a form that accepts an email input and logs the value in the console when submitted.</p>
-<button class="show-btn" onclick="document.getElementById('solution1').style.display='block';">Show Solution</button>
-<pre id="solution1" class="solution">&lt;form id="emailForm"&gt;
+checkScope();
+console.log(localVar); // ❌ Error: not defined
+</code></pre>
 
-<input type="email" id="email" placeholder="Enter email"> <button type="submit">Send</button> </form>
+    <h3>🔁 Block Scope (let & const)</h3>
+    <pre><code>if (true) {
+  let blockVar = "inside block";
+  const fixedVar = "constant";
+  console.log(blockVar); // ✅
+}
 
-<script> document.getElementById("emailForm").addEventListener("submit", function(e) { e.preventDefault(); let userEmail = document.getElementById("email").value; console.log("Email submitted: " + userEmail); }); </script></pre>
+console.log(blockVar); // ❌ Error
+</code></pre>
 
-<div class="tip">💡 Tip: Always use <code>e.preventDefault()</code> to stop form from refreshing the page.</div>
+    <h3>🧠 Lexical Environment</h3>
+    <p>A function remembers the variables from its parent scope:</p>
+    <pre><code>function outer() {
+  let name = "Ali";
 
-<button class="next-btn" onclick="window.location.href='lesson19.html'">Next Lesson</button>
+  function inner() {
+    console.log("Hello " + name); // remembers 'name'
+  }
 
-  </div>  <script>
-    function copyCode(btn) {
-      const code = btn.nextElementSibling.innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        btn.innerText = 'Copied!';
-        setTimeout(() => btn.innerText = 'Copy', 2000);
-      });
-    }
-  </script></body>
+  return inner;
+}
+
+const greet = outer();
+greet(); // Hello Ali
+</code></pre>
+
+    <div class="tip">
+      ✅ Use <code>let</code> and <code>const</code> for block-scoped variables to avoid bugs.
+    </div>
+
+    <div class="interview">
+      💬 <strong>Interview Insight:</strong> Be ready to explain what variables are accessible and from where. Expect questions on lexical scope and closures.
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Write a function inside another function and return the inner function. Call it outside.</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>function welcome(name) {
+  return function() {
+    console.log("Welcome " + name);
+  };
+}
+
+const sayWelcome = welcome("Zara");
+sayWelcome(); // Welcome Zara
+</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson17.html">⬅️ Back to Lesson 17</a>
+      <a href="lesson19.html">Lesson 19 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson18.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson18.html
+      </a>
+    </div>
+  </div>
+</body>
 </html>

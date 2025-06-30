@@ -1,3 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 10 – Ternary Operator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Master the JavaScript ternary operator. Learn how to simplify conditional logic in just one line.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .warning {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffecec;
+      border-color: #d32f2f;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 10 – Ternary Operator</h1>
+
+    <h3>🎯 What is the Ternary Operator?</h3>
+    <p>The ternary operator is a shorthand way to write <code>if...else</code> statements. It uses the syntax:</p>
+
+    <pre><code>condition ? expressionIfTrue : expressionIfFalse</code></pre>
+
+    <h3>🧪 Example: Age Check</h3>
+    <pre><code>let age = 20;
+
+let message = (age >= 18) ? "You can vote!" : "Too young to vote.";
+
+console.log(message);</code></pre>
+
+    <h3>📦 Cleaner Alternative to if...else</h3>
+    <pre><code>let isLoggedIn = true;
+
+let welcome = isLoggedIn ? "Welcome back!" : "Please log in.";
+console.log(welcome);</code></pre>
+
+    <div class="tip">
+      ✅ Use ternary when assigning a value based on a condition, especially inside <code>let</code> or <code>const</code>.
+    </div>
+
+    <div class="warning">
+      ⚠️ Don't overuse ternaries with many nested conditions — it reduces readability.
+    </div>
+
+    <h3>💡 Nesting (Be Careful!):</h3>
+    <pre><code>let score = 85;
+
+let grade = (score >= 90) ? "A" :
+            (score >= 80) ? "B" :
+            (score >= 70) ? "C" : "F";
+
+console.log("Your grade is:", grade);</code></pre>
+
+    <h3>🧪 Practice Challenge</h3>
+    <p>Create a ternary that checks:</p>
+    <ul>
+      <li>If temperature is over 30 → "It's hot"</li>
+      <li>Otherwise → "Not too hot"</li>
+    </ul>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>let temp = 33;
+
+let status = temp > 30 ? "It's hot" : "Not too hot";
+console.log(status);</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson9.html">⬅️ Back to Lesson 9</a>
+      <a href="lesson11.html">Lesson 11 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson10.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson10.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -189,10 +347,10 @@
 </style>
 
 
-<!-- Floating Lesson Tracker -->
+<!-- Floating Lesson Tracker --
 <div id="progress-circle">15</div>
 
-<!-- Tracker Popup -->
+<!-- Tracker Popup --
 <div id="tracker-popup">
   <button class="close-popup" onclick="togglePopup()">❌</button>
   <h4>You're on Lesson <span id="popupLessonNum">15</span></h4>

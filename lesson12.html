@@ -2,6 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Lesson 12 – Logical Operators in JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn JavaScript logical operators: AND, OR, and NOT. Master how to combine and invert conditions in your code.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 12 – Logical Operators</h1>
+
+    <h3>🔑 What Are Logical Operators?</h3>
+    <ul>
+      <li><code>&&</code> (AND) – True if both sides are true</li>
+      <li><code>||</code> (OR) – True if at least one side is true</li>
+      <li><code>!</code> (NOT) – Inverts a condition</li>
+    </ul>
+
+    <h3>🧪 Example: Age and Country Check</h3>
+    <pre><code>let age = 20;
+let isNigerian = true;
+
+if (age >= 18 && isNigerian) {
+  console.log("Eligible for national voter registration.");
+}</code></pre>
+
+    <h3>🔍 Using OR</h3>
+    <pre><code>let hasPassport = false;
+let hasNationalID = true;
+
+if (hasPassport || hasNationalID) {
+  console.log("You have valid ID.");
+}</code></pre>
+
+    <h3>❗ NOT Operator</h3>
+    <pre><code>let loggedIn = false;
+
+if (!loggedIn) {
+  console.log("Please log in to continue.");
+}</code></pre>
+
+    <div class="tip">
+      ✅ Combine logical operators in a single expression to create powerful checks.
+    </div>
+
+    <div class="interview">
+      💬 <strong>Interview Insight:</strong> Employers expect you to confidently write <code>if (A && B)</code> and <code>if (!X)</code> checks.
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Check if a user has paid <code>isPaid</code> AND has login access <code>canAccess</code>. If true, show: “Access granted”.</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>let isPaid = true;
+let canAccess = true;
+
+if (isPaid && canAccess) {
+  console.log("Access granted.");
+}</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson11.html">⬅️ Back to Lesson 11</a>
+      <a href="lesson13.html">Lesson 13 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson12.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson12.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesson 12 - JavaScript Objects</title>
   <style>

@@ -1,6 +1,6 @@
 /* === service-worker.js === */
 
-const CACHE_NAME = 'js-tutorial-v5.0';
+const CACHE_NAME = 'js-tutorial-v6.0';
 const urlsToCache = [ 
   '/', 
   '/index.html', 

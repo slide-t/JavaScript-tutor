@@ -1,3 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 24 – JavaScript Strings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn all about JavaScript strings, how to create and manipulate them using built-in methods like slice, toUpperCase, trim, and more." />
+  <meta name="keywords" content="JavaScript strings, string methods, string length, text manipulation, EduKids Africa, SlideTeck Academy" />
+  <meta name="author" content="EduKids Africa - SlideTeck Academy" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-left: 5px solid #0277bd;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .challenge {
+      background: #fff7e6;
+      border-left: 5px solid #f4a261;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 24 – JavaScript Strings</h1>
+
+    <h3>📌 Declaring a String</h3>
+    <pre><code>let name = "EduKids Africa";</code></pre>
+
+    <h3>🧪 Useful String Methods</h3>
+    <ul>
+      <li><code>.length</code> – Total number of characters</li>
+      <li><code>.toUpperCase()</code> / <code>.toLowerCase()</code> – Case conversion</li>
+      <li><code>.slice(start, end)</code> – Extracts part of the string</li>
+      <li><code>.trim()</code> – Removes extra spaces</li>
+      <li><code>.includes("text")</code> – Checks if string contains specific value</li>
+    </ul>
+
+    <h3>🎯 Example:</h3>
+    <pre><code>
+let city = "  Lagos ";
+console.log(city.trim().toUpperCase()); // Output: LAGOS
+    </code></pre>
+
+    <div class="tip">
+      🔠 String methods don’t change the original string (strings are immutable). They return a new string instead!
+    </div>
+
+    <div class="challenge">
+      🧠 <strong>Challenge:</strong><br>
+      Create a function that checks if a user's name contains "admin" and formats the name properly.
+      <br/><br/>
+      ✅ Example: <code>"  admin_john "</code> should become: <code>"Admin John"</code>
+    </div>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>
+function cleanName(input) {
+  let trimmed = input.trim();
+  if (trimmed.toLowerCase().includes("admin")) {
+    return "Admin " + trimmed.replace(/admin_/i, "").replace("_", " ");
+  }
+  return trimmed;
+}
+
+console.log(cleanName("  admin_john ")); // Admin John
+      </code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson23.html">⬅️ Back to Lesson 23</a>
+      <a href="lesson25.html">Lesson 25 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson24.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson24.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

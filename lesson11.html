@@ -1,3 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 11 – Switch Statement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Master the switch statement in JavaScript to handle multiple condition checks cleanly and clearly.">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #001219;
+      text-align: center;
+    }
+    h3 {
+      color: #005f73;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background: #dff3f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .tip, .warning, .interview {
+      padding: 10px;
+      border-left: 5px solid;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    .tip {
+      background: #e6f7ff;
+      border-color: #0277bd;
+    }
+    .warning {
+      background: #ffecec;
+      border-color: #d32f2f;
+    }
+    .interview {
+      background: #fef6e4;
+      border-color: #f4a261;
+    }
+    .nav a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #001219;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .nav a:hover {
+      background: #00303d;
+    }
+    .github {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .github a {
+      color: #0077b6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 11 – Switch Statement</h1>
+
+    <h3>🔄 Use Case: Cleaner Multi-Choice Logic</h3>
+    <p>Instead of writing many <code>if...else if</code> blocks, use a <code>switch</code> when you’re checking a single variable against different values.</p>
+
+    <h3>🧪 Example: User Role</h3>
+    <pre><code>let role = "admin";
+
+switch (role) {
+  case "admin":
+    console.log("Full access granted.");
+    break;
+  case "editor":
+    console.log("You can edit content.");
+    break;
+  case "viewer":
+    console.log("Read-only access.");
+    break;
+  default:
+    console.log("Unknown role.");
+}</code></pre>
+
+    <div class="tip">
+      ✅ Always add a <code>default</code> to catch unexpected values.
+    </div>
+
+    <h3>📦 Real-World Use: Day of the Week</h3>
+    <pre><code>let day = new Date().getDay();
+
+switch (day) {
+  case 0:
+    console.log("Sunday");
+    break;
+  case 1:
+    console.log("Monday");
+    break;
+  case 6:
+    console.log("Saturday");
+    break;
+  default:
+    console.log("A working day");
+}</code></pre>
+
+    <div class="interview">
+      💬 <strong>Interview Tip:</strong> Use <code>switch</code> when:
+      <ul>
+        <li>Comparing one variable to multiple constant values</li>
+        <li>You want cleaner, grouped control flow</li>
+        <li>Performance matters in large conditional chains</li>
+      </ul>
+    </div>
+
+    <h3>🧪 Practice Challenge:</h3>
+    <p>Create a <code>switch</code> that logs the type of device based on input: "phone", "tablet", "desktop", "smartwatch".</p>
+
+    <details>
+      <summary><strong>✅ Show Solution</strong></summary>
+      <pre><code>let device = "tablet";
+
+switch (device) {
+  case "phone":
+    console.log("Mobile phone detected.");
+    break;
+  case "tablet":
+    console.log("Tablet in use.");
+    break;
+  case "desktop":
+    console.log("Desktop device.");
+    break;
+  case "smartwatch":
+    console.log("Small screen wearable.");
+    break;
+  default:
+    console.log("Unknown device.");
+}</code></pre>
+    </details>
+
+    <div class="nav">
+      <a href="lesson10.html">⬅️ Back to Lesson 10</a>
+      <a href="lesson12.html">Lesson 12 ➡️</a>
+    </div>
+
+    <div class="github">
+      🔗 GitHub Lesson:  
+      <a href="https://slide-t.github.io/JavaScript-tutor/lesson11.html" target="_blank">
+        https://slide-t.github.io/JavaScript-tutor/lesson11.html
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />

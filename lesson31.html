@@ -1,3 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson 31 – JavaScript Math Object & Random Numbers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to use the JavaScript Math object and generate random numbers for games and logic." />
+  <meta name="keywords" content="JavaScript Math, random number, Math.random, Math.floor, EduKids Africa JavaScript course" />
+  <meta name="author" content="EduKids Africa" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #003049;
+    }
+    code {
+      background: #eee;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    button {
+      background: #2a9d8f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #1c7c6b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 31 – Math Object & Random Numbers</h1>
+
+    <p>The <code>Math</code> object provides useful methods for numeric operations:</p>
+
+    <h3>✅ Common Math Methods</h3>
+    <pre><code>let number = 7.8;
+
+console.log(Math.round(number));  // 8
+console.log(Math.floor(number));  // 7
+console.log(Math.ceil(number));   // 8
+console.log(Math.sqrt(25));       // 5</code></pre>
+
+    <h3>🎲 Generate Random Numbers</h3>
+    <pre><code>let random = Math.random(); // 0 to 0.999...
+console.log(random);
+
+let between1and10 = Math.floor(Math.random() * 10) + 1;
+console.log(between1and10);</code></pre>
+
+    <h3>🧠 Try It: Random Number Guess Game</h3>
+    <p>Click the button to guess a number between 1 and 5:</p>
+    <button onclick="guessNumber()">Guess</button>
+    <div class="output" id="output"></div>
+
+    <script>
+      function guessNumber() {
+        const userGuess = prompt("Guess a number from 1 to 5");
+        const actual = Math.floor(Math.random() * 5) + 1;
+        const msg = (parseInt(userGuess) === actual)
+          ? "🎉 Correct!"
+          : `❌ Wrong! It was ${actual}`;
+        document.getElementById("output").textContent = msg;
+      }
+    </script>
+
+    <a href="lesson32.html" class="btn">Next Lesson</a>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">

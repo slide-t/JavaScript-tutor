@@ -1,3 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Understand JavaScript DOM hover events like mouseover, mouseout, mouseenter, and mouseleave with real examples and practice." />
+  <meta name="keywords" content="JavaScript hover events, mouseover, mouseout, mouseenter, mouseleave, DOM events, web development for beginners" />
+  <meta name="author" content="SlideTeck Academy - EduKids Africa" />
+  <title>Lesson 33 - JavaScript Hover Events</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8f8;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #001219;
+    }
+
+    pre {
+      background: #001219;
+      color: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #005f73;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .copy-code {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background: gold;
+      color: #001219;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .tracker {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #001219;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .practice {
+      background: #e6fffa;
+      padding: 16px;
+      margin-top: 25px;
+      border-left: 4px solid #007f5f;
+      border-radius: 6px;
+    }
+
+    .hover-box {
+      width: 100%;
+      height: 100px;
+      background: #ccc;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tracker">33</div>
+
+  <div class="container">
+    <h1>Lesson 33: Mouse Hover Events in JavaScript</h1>
+
+    <p>JavaScript lets you detect mouse interactions with several events:</p>
+    <ul>
+      <li><strong>mouseover</strong>: when mouse enters an element or its child</li>
+      <li><strong>mouseout</strong>: when mouse leaves an element or its child</li>
+      <li><strong>mouseenter</strong>: when mouse enters an element (no bubbling)</li>
+      <li><strong>mouseleave</strong>: when mouse leaves an element</li>
+    </ul>
+
+    <h3>Example:</h3>
+    <pre id="code-snippet">
+document.querySelector(".hover-box").addEventListener("mouseenter", () => {
+  console.log("Mouse entered the box!");
+});
+
+document.querySelector(".hover-box").addEventListener("mouseleave", () => {
+  console.log("Mouse left the box!");
+});
+    <button class="copy-code" onclick="copyCode()">Copy</button>
+    </pre>
+
+    <div class="hover-box">Hover Over Me!</div>
+
+    <div class="practice">
+      <strong>🛠️ Practice Task:</strong>
+      <p>
+        Create a colored box. Add `mouseover` and `mouseout` event listeners. When the user hovers over the box, change the background color and display a message in the console.
+      </p>
+    </div>
+
+    <a href="lesson34.html" class="btn">Next Lesson →</a>
+  </div>
+
+  <script>
+    localStorage.setItem("currentLesson", "33");
+
+    function copyCode() {
+      const code = document.getElementById("code-snippet").innerText;
+      navigator.clipboard.writeText(code);
+      alert("Code copied to clipboard!");
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
